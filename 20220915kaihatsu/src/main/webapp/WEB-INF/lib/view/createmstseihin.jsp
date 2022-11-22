@@ -101,7 +101,7 @@ margin:0 0 0em; /*上 左右 下*/
 <body>
 <p class="valimessage">*の項目は入力必須です。</p><br>
 
-<form action="/20220915kaihatsu/CreateMSTSEIHIN" method="post">
+<form action="/20220915kaihatsu/CreateMSTSEIHIN" method="post" onsubmit="return kakunin();">
 <label class="label required" for="seihincode1">製品コード</label>
 	<input id="seihincode1" type="text" name="SEIHIN_CODE" maxlength="5" required><br>
 <label class="label required" for="seihinname1">　　製品名</label>
@@ -114,6 +114,15 @@ margin:0 0 0em; /*上 左右 下*/
 <button class="cancelbuttoncss" type="button" onclick="closeWin2()">閉じる</button>
 
 <script>
+function kakunin() {
+	if(confirm('登録してよろしいですか？') == true){
+		window.onbeforeunload=null;
+		return true;
+	}else{
+		return false;
+	}
+}
+
 function closeWin2() {
 	//if (confirm('入力内容は破棄されます') == true){
 		window.close();
