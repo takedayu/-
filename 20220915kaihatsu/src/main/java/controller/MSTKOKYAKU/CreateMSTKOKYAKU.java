@@ -46,6 +46,9 @@ public class CreateMSTKOKYAKU extends HttpServlet {
 		
 		String dummyname = ("");
 		List<Mstkokyaku> list=ld.searchAll(kokyaku_code,dummyname);
+		
+//		request.setAttribute("登録が完了しました。",("登録が完了しました。"));
+		
 		RequestDispatcher rd;
 		if(list.isEmpty()) {
 			ld.insertOne(mstkokyaku);

@@ -229,7 +229,7 @@ $(function(){
 </head>
 <body>
 <br>
-
+<p></p>
 <button class="buttoncss" type="button" onclick="window.open('/20220915kaihatsu/CreateMSTKOKYAKU','null','menubar=0');">新規登録</button><br>
 
 <form action="/20220915kaihatsu/SearchMSTKOKYAKU" method="post">
