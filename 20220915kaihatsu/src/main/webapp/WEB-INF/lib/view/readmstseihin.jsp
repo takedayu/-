@@ -120,10 +120,7 @@ String kanryomessage=(String)session.getAttribute("kanryomessage");
   opacity       : 1;         /* 透明度     */
   transition    : .3s;         /* なめらか変化 */
   border: none;/*線を消す*/
-  text-decoration: none;
-  margin-top:10px;				/* すき間　（德永）    */
-  
-  
+  text-decoration: none; 
   
 }
 .buttoncss:hover {
@@ -139,7 +136,6 @@ String kanryomessage=(String)session.getAttribute("kanryomessage");
 body {
 	width:90%;
     margin: 0 auto;
-    margin-top:20px;				/* すき間　（德永）    */
 }
 
 .label{
@@ -238,8 +234,6 @@ $(function(){
 </head>
 <body>
 
-
-
 <a href="/20220915kaihatsu/ReadTURIAGE">
     <button   class="buttoncss"   type="button">売上表</button>
 </a>
@@ -252,25 +246,9 @@ $(function(){
     <button    class="buttoncss"  type="button">製品マスタ</button>
 </a>
 
-<a href="/20221017tokunagakaihatu/ReadMSTKOKYAKU">
+<a href="/20220915kaihatsu/ReadMSTKOKYAKU">
     <button    class="buttoncss"  type="button">顧客マスタ</button>
 </a>
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <br>
 <%if(kanryomessage != null){ %>
