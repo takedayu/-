@@ -151,6 +151,7 @@ background:linear-gradient(to bottom,#f2f2f2 0% 95%, rgba(0,0,0,0) 95% 100%);
 
 'use strict';
 
+
 $(function(){
 
   /**
