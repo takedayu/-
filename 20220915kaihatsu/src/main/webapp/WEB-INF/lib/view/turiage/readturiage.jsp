@@ -10,6 +10,8 @@ List<Turiage> list3=(List<Turiage>)session.getAttribute("list3");
 String kanryomessage=(String)session.getAttribute("kanryomessage");
 %>
 
+
+
 <!DOCTYPE html>
 
 <html>
