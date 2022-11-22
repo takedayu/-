@@ -188,7 +188,7 @@ $(function(){
    * 
    * @param ele 
    * @param sortFlg 
-   */
+ */
   function sortTable(ele, sortFlg){
     let arr = $('table tbody tr').sort(function(a, b){
       // ソート対象が数値の場合
