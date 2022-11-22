@@ -235,7 +235,7 @@ $(function(){
 
 
 <meta charset="UTF-8">
-<title>製品一覧</title>
+<title>売上一覧</title>
 </head>
 <body>
 <br>

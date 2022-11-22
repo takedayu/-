@@ -225,7 +225,7 @@ $(function(){
 
 <!-- link rel="stylesheet" type="text/css" href="<!%= request.getContextPath() %>/style/style.css"> -->
 <meta charset="UTF-8">
-<title>製品一覧</title>
+<title>顧客一覧</title>
 </head>
 <body>
 <br>
