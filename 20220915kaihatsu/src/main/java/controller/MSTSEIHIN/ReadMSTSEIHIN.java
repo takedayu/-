@@ -19,9 +19,7 @@ import model.Mstseihin;
 		private static final long serialVersionUID = 1L;
 
 		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			HttpSession session = request.getSession(
-
-					);
+			HttpSession session = request.getSession();
 			SeihinDAO dao=new SeihinDAO();
 			List<Mstseihin> list=dao.findAll();
 			SeihinDAO dao2=new SeihinDAO();

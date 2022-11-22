@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.KokyakuDAO;
 import model.Mstkokyaku;
@@ -28,6 +29,7 @@ public class CreateMSTKOKYAKU extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession(false);
 		request.setCharacterEncoding("UTF-8");			
 		String kokyaku_code=request.getParameter("KOKYAKU_CODE");
 		String kokyaku_name=request.getParameter("KOKYAKU_NAME");
@@ -47,13 +49,12 @@ public class CreateMSTKOKYAKU extends HttpServlet {
 		String dummyname = ("");
 		List<Mstkokyaku> list=ld.searchAll(kokyaku_code,dummyname);
 		
-//		request.setAttribute("登録が完了しました。",("登録が完了しました。"));
-		
 		RequestDispatcher rd;
 		if(list.isEmpty()) {
+			session.setAttribute("kanryomessage",("登録が完了しました。")); 
 			ld.insertOne(mstkokyaku);
 			rd=request.getRequestDispatcher("/WEB-INF/lib/view/mstkokyaku/kanryomstkokyaku.jsp");
-			rd.forward(request, response);				
+			rd.forward(request, response);
 		}else {
 			rd=request.getRequestDispatcher("/WEB-INF/lib/view/mstkokyaku/uniqueerror_createmstkokyaku.jsp");
 			rd.forward(request, response);	

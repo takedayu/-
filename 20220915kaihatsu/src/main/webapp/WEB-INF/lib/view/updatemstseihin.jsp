@@ -86,7 +86,7 @@ margin:0 0 0em; /*上 左右 下*/
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>更新画面</title>
 </head>
 <body>
 <form name="updatem" action="/20220915kaihatsu/UpdateMSTSEIHIN" method="Post" onsubmit="return kakunin();">

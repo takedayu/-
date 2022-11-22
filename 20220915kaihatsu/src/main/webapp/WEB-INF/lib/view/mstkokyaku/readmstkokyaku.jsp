@@ -7,6 +7,7 @@ List<Mstkokyaku> list=(List<Mstkokyaku>)request.getAttribute("list");
 List<Mstkokyaku> list2=(List<Mstkokyaku>)request.getAttribute("list2");
 @SuppressWarnings("unchecked")
 List<Mstkokyaku> list3=(List<Mstkokyaku>)session.getAttribute("list3");
+String kanryomessage=(String)session.getAttribute("kanryomessage");
 %>
 
 <!DOCTYPE html>
@@ -141,7 +142,9 @@ body {
 background:linear-gradient(to bottom,#f2f2f2 0% 95%, rgba(0,0,0,0) 95% 100%);
 }
 
-
+    p{
+margin:0 0 0em; /*上 左右 下*/
+}
 
 </style>
 
@@ -225,7 +228,7 @@ $(function(){
 
 <!-- link rel="stylesheet" type="text/css" href="<!%= request.getContextPath() %>/style/style.css"> -->
 <meta charset="UTF-8">
-<title>製品一覧</title>
+<title>顧客一覧</title>
 </head>
 
 <body>
@@ -270,7 +273,9 @@ $(function(){
 
 
 <br>
-<p></p>
+<%if(kanryomessage != null){ %>
+<p><%=kanryomessage %></p>
+<%} %>
 <button class="buttoncss" type="button" onclick="window.open('/20220915kaihatsu/CreateMSTKOKYAKU','null','menubar=0');">新規登録</button><br>
 
 <form action="/20220915kaihatsu/SearchMSTKOKYAKU" method="post">

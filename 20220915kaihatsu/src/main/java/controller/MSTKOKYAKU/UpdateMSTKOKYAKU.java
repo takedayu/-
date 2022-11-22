@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.KokyakuDAO;
 import model.Mstkokyaku;
@@ -33,6 +34,7 @@ public class UpdateMSTKOKYAKU extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession(false);
 		request.setCharacterEncoding("UTF-8");
 
 		String kokyaku_code=request.getParameter("KOKYAKU_CODE");
@@ -47,6 +49,7 @@ public class UpdateMSTKOKYAKU extends HttpServlet {
 		koushin.setKokyaku_address(kokyaku_address);
 		koushin.setKokyaku_tel(kokyaku_tel);
 		
+		session.setAttribute("kanryomessage",("更新が完了しました。")); 
 		
 		KokyakuDAO dao=new KokyakuDAO();
 		
