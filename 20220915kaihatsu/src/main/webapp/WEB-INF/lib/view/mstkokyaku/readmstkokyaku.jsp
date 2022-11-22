@@ -230,13 +230,7 @@ $(function(){
 <meta charset="UTF-8">
 <title>顧客一覧</title>
 </head>
-
 <body>
-
-
-
-
-
 
 <a href="/20220915kaihatsu/ReadTURIAGE">
     <button   class="buttoncss"   type="button">売上表</button>
@@ -250,28 +244,10 @@ $(function(){
     <button    class="buttoncss"  type="button">製品マスタ</button>
 </a>
 
-<a href="/20221017tokunagakaihatu/ReadMSTKOKYAKU">
+<a href="/20220915kaihatsu/ReadMSTKOKYAKU">
     <button    class="buttoncss"  type="button">顧客マスタ</button>
 </a>
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<br>
 <br>
 <%if(kanryomessage != null){ %>
 <p><%=kanryomessage %></p>

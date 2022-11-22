@@ -232,6 +232,22 @@ $(function(){
 <title>在庫一覧</title>
 </head>
 <body>
+<a href="/20220915kaihatsu/ReadTURIAGE">
+    <button   class="buttoncss"   type="button">売上表</button>
+</a>
+
+<a href="/20220915kaihatsu/ReadTZAIKO">
+    <button    class="buttoncss"  type="button">在庫表</button>
+</a>
+
+<a href="/20220915kaihatsu/ReadMSTSEIHIN">
+    <button    class="buttoncss"  type="button">製品マスタ</button>
+</a>
+
+<a href="/20220915kaihatsu/ReadMSTKOKYAKU">
+    <button    class="buttoncss"  type="button">顧客マスタ</button>
+</a>
+<br>
 <br>
 <!-- 
 <button class="buttoncss" type="button" onclick="window.open('/20220915kaihatsu/CreateMSTSEIHIN','null','menubar=0');">新規登録</button><br>

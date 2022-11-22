@@ -229,9 +229,6 @@ $(function(){
 </head>
 <body>
 
-
-
-
 <a href="/20220915kaihatsu/ReadTURIAGE">
     <button   class="buttoncss"   type="button">売上表</button>
 </a>
@@ -244,14 +241,10 @@ $(function(){
     <button    class="buttoncss"  type="button">製品マスタ</button>
 </a>
 
-<a href="/20221017tokunagakaihatu/ReadMSTKOKYAKU">
+<a href="/20220915kaihatsu/ReadMSTKOKYAKU">
     <button    class="buttoncss"  type="button">顧客マスタ</button>
 </a>
-	
-
-
-
-
+<br>
 <br>
 <!-- 
 <button class="buttoncss" type="button" onclick="window.open('/20220915kaihatsu/CreateMSTSEIHIN','null','menubar=0');">新規登録</button><br>
