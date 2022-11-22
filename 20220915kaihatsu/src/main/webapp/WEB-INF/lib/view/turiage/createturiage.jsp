@@ -174,7 +174,7 @@ margin:0 0 0em; /*上 左右 下*/
 <body>
 <p class="valimessage">*の項目は入力必須です。</p>
 <p>※製品コードに項目が見当たらない場合は、在庫登録を行ってください。</p><br>
-<form action="/20220915kaihatsu/CreateTURIAGE" method="post">
+<form action="/20220915kaihatsu/CreateTURIAGE" method="post" onsubmit="return kakunin();">
 <label class="label required" for="uriagedate1">　　　取引日</label>
 	<input id="uriagedate1" type="date" name="URIAGE_DATE" required><br>
 	 
@@ -205,6 +205,14 @@ margin:0 0 0em; /*上 左右 下*/
 <button class="buttoncss" type="submit">追加</button>
 <button class="cancelbuttoncss" type="button" onclick="closeWin2()">閉じる</button>
 <script>
+function kakunin() {
+	if(confirm('登録してよろしいですか？') == true){
+		window.onbeforeunload=null;
+		return true;
+	}else{
+		return false;
+	}
+}
 
 function closeWin2() {
 //	if (confirm('入力内容は破棄されます') == true){
