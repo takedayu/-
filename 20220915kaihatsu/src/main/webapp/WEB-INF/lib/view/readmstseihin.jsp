@@ -234,7 +234,6 @@ $(function(){
 </head>
 <body>
 
-
 <a href="/20220915kaihatsu/ReadTURIAGE">
     <button   class="buttoncss"   type="button">売上表</button>
 </a>
