@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.KokyakuDAO;
 import dao.UriageDAO;
@@ -28,7 +29,6 @@ public class CreateTURIAGE extends HttpServlet {
 
   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 		
 		UriageDAO dao2=new UriageDAO();
 		List<Turiage> list2=dao2.listAll();
@@ -53,6 +53,8 @@ public class CreateTURIAGE extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		HttpSession session = request.getSession(false);
+		
 		String uriagedate=request.getParameter("URIAGE_DATE");
 		String kokyakucode=request.getParameter("KOKYAKU_CODE");
 		String seihincode=request.getParameter("SEIHIN_CODE");
@@ -94,6 +96,8 @@ public class CreateTURIAGE extends HttpServlet {
 		tsuika.setUriagesuryo(uriagesuryo2);
 		tsuika.setUriage(uriage2);
 //		request.setAttribute("tsuika", tsuika);
+		
+		session.setAttribute("kanryomessage",("登録が完了しました。"));
 		
 		if(uriagedate2 == null || kokyakucode == "" || seihincode == "") {
 			response.sendRedirect("/20220915kaihatsu/CreateTURIAGE");

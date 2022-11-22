@@ -25,6 +25,7 @@ public class DeleteMSTSEIHIN extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		String id=request.getParameter("SEIHIN_CODE");
 		if(id !=null) {
+			session.setAttribute("kanryomessage",("削除が完了しました。"));
 			SeihinDAO dao=new SeihinDAO();
 			dao.deleteOne(id);
 			
@@ -35,7 +36,5 @@ public class DeleteMSTSEIHIN extends HttpServlet {
 		}
 		response.sendRedirect("/20220915kaihatsu/ReadMSTSEIHIN");
 	}
-
-
 
 }

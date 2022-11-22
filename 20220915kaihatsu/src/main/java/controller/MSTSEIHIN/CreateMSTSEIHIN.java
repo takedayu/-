@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.SeihinDAO;
 import model.Mstseihin;
@@ -28,6 +29,7 @@ public class CreateMSTSEIHIN extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession(false);
 		request.setCharacterEncoding("UTF-8");
 		String seihincode=request.getParameter("SEIHIN_CODE");
 		String seihinname=request.getParameter("SEIHIN_NAME");
@@ -61,6 +63,7 @@ public class CreateMSTSEIHIN extends HttpServlet {
 		List<Mstseihin> list=ld.searchAll(dummyname,seihincode);
 		RequestDispatcher rd;
 		if(list.isEmpty()) {
+			session.setAttribute("kanryomessage",("登録が完了しました。"));
 			ld.insertOne(tsuika);		
 			rd=request.getRequestDispatcher("/WEB-INF/lib/view/kanryomstseihin.jsp");
 			rd.forward(request, response);

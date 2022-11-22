@@ -7,6 +7,7 @@ List<Turiage> list=(List<Turiage>)request.getAttribute("list");
 List<Turiage> list2=(List<Turiage>)request.getAttribute("list2");
 @SuppressWarnings("unchecked")
 List<Turiage> list3=(List<Turiage>)session.getAttribute("list3");
+String kanryomessage=(String)session.getAttribute("kanryomessage");
 %>
 
 <!DOCTYPE html>
@@ -141,7 +142,9 @@ body {
 background:linear-gradient(to bottom,#f2f2f2 0% 95%, rgba(0,0,0,0) 95% 100%);
 }
 
-
+    p{
+margin:0 0 0em; /*上 左右 下*/
+}
 
 </style>
 
@@ -229,7 +232,9 @@ $(function(){
 </head>
 <body>
 <br>
-
+<%if(kanryomessage != null){ %>
+<p><%=kanryomessage %></p>
+<%} %>
 <button class="buttoncss" type="button" onclick="window.open('/20220915kaihatsu/CreateTURIAGE','null','menubar=0');">新規登録</button><br>
 
 <form action="/20220915kaihatsu/SearchTURIAGE" method="post">

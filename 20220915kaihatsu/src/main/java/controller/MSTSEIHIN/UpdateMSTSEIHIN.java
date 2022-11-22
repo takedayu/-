@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.SeihinDAO;
 import model.Mstseihin;
@@ -33,6 +34,7 @@ public class UpdateMSTSEIHIN extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession(false);
 		request.setCharacterEncoding("UTF-8");
 
 		String seihincode=request.getParameter("SEIHIN_CODE");
@@ -61,6 +63,9 @@ public class UpdateMSTSEIHIN extends HttpServlet {
 		koushin.setSeihinname(seihinname);
 		koushin.setSeihingenka(seihingenka2);
 		koushin.setSeihinteika(seihinteika2);
+		
+		session.setAttribute("kanryomessage",("更新が完了しました。")); 
+		
 		SeihinDAO dao=new SeihinDAO();
 		dao.updateOne(koushin);
 //		response.sendRedirect("/20220915kaihatsu/ReadMSTSEIHIN");
