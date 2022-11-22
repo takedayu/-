@@ -228,6 +228,29 @@ $(function(){
 <title>製品一覧</title>
 </head>
 <body>
+
+
+
+<a href="/20220915kaihatsu/ReadTURIAGE">
+    <button   class="buttoncss"   type="button">売上表</button>
+</a>
+
+<a href="/20220915kaihatsu/ReadTZAIKO">
+    <button    class="buttoncss"  type="button">在庫表</button>
+</a>
+
+<a href="/20220915kaihatsu/ReadMSTSEIHIN">
+    <button    class="buttoncss"  type="button">製品マスタ</button>
+</a>
+
+<a href="/20221017tokunagakaihatu/ReadMSTKOKYAKU">
+    <button    class="buttoncss"  type="button">顧客マスタ</button>
+</a>
+	
+
+
+
+
 <br>
 
 <button class="buttoncss" type="button" onclick="window.open('/20220915kaihatsu/CreateTURIAGE','null','menubar=0');">新規登録</button><br>
