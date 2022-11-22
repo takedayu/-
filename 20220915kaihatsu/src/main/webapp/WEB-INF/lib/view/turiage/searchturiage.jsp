@@ -254,7 +254,7 @@ $(function(){
     <button    class="buttoncss"  type="button">顧客マスタ</button>
 </a>
 <br>
-
+<br>
 <button class="buttoncss" type="button" onclick="window.open('/20220915kaihatsu/CreateTURIAGE','null','menubar=0');">新規登録</button><br>
 
 <form action="/20220915kaihatsu/SearchTURIAGE" method="post">

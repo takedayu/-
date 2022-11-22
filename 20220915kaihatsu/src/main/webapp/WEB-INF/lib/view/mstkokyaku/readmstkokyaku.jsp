@@ -248,7 +248,7 @@ $(function(){
     <button    class="buttoncss"  type="button">顧客マスタ</button>
 </a>
 <br>
-
+<br>
 <%if(kanryomessage != null){ %>
 <p><%=kanryomessage %></p>
 <%} %>
