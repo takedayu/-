@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>完了</title>
 
 <%request.setAttribute("登録が完了しました。",("登録が完了しました。")); %>
 
