@@ -7,6 +7,7 @@ List<Mstseihin> list=(List<Mstseihin>)request.getAttribute("list");
 List<Mstseihin> list2=(List<Mstseihin>)request.getAttribute("list2");
 @SuppressWarnings("unchecked")
 List<Mstseihin> list3=(List<Mstseihin>)session.getAttribute("list3");
+String kanryomessage=(String)session.getAttribute("kanryomessage");
 %>
 
 <!DOCTYPE html>
@@ -141,6 +142,9 @@ body {
 background:linear-gradient(to bottom,#f2f2f2 0% 95%, rgba(0,0,0,0) 95% 100%);
 }
 
+    p{
+margin:0 0 0em; /*上 左右 下*/
+}
 
 
 </style>
@@ -229,7 +233,9 @@ $(function(){
 </head>
 <body>
 <br>
-
+<%if(kanryomessage != null){ %>
+<p><%=kanryomessage %></p>
+<%} %>
 <button class="buttoncss" type="button" onclick="window.open('/20220915kaihatsu/CreateMSTSEIHIN','null','menubar=0');">新規登録</button><br>
 
 <form action="/20220915kaihatsu/SearchMSTSEIHIN" method="post">
