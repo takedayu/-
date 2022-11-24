@@ -23,9 +23,10 @@ public class DeleteMSTKOKYAKU extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession(true);
+		HttpSession session = request.getSession(false);
 		String id=request.getParameter("KOKYAKU_CODE");
 		if(id !=null) {
+
 			session.setAttribute("kanryomessage",("削除が完了しました。"));
 			KokyakuDAO dao=new KokyakuDAO();
 			dao.deleteOne(id);

@@ -19,7 +19,7 @@ public class ReadMSTKOKYAKU extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession();
+		HttpSession session = request.getSession(false);
 		KokyakuDAO dao=new KokyakuDAO();
 		List<Mstkokyaku> list=dao.findAll();
 		KokyakuDAO dao2=new KokyakuDAO();
@@ -28,7 +28,8 @@ public class ReadMSTKOKYAKU extends HttpServlet {
 		request.setAttribute("list2", list2);
 		RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/lib/view/mstkokyaku/readmstkokyaku.jsp");
 		rd.forward(request, response);
-		session.invalidate();			
+		session.removeAttribute("kanryomessage");
+//		session.invalidate();			
 
 	}	
 		

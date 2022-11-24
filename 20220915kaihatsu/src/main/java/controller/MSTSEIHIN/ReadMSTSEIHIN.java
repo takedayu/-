@@ -19,7 +19,7 @@ import model.Mstseihin;
 		private static final long serialVersionUID = 1L;
 
 		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			HttpSession session = request.getSession();
+			HttpSession session = request.getSession(false);
 			SeihinDAO dao=new SeihinDAO();
 			List<Mstseihin> list=dao.findAll();
 			SeihinDAO dao2=new SeihinDAO();
@@ -28,7 +28,8 @@ import model.Mstseihin;
 			request.setAttribute("list2", list2);
 			RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/lib/view/readmstseihin.jsp");
 			rd.forward(request, response);
-			session.invalidate();			
+			session.removeAttribute("kanryomessage");
+//			session.invalidate();
 
 		}
 

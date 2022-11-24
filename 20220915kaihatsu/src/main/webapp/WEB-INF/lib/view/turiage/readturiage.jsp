@@ -8,6 +8,7 @@ List<Turiage> list2=(List<Turiage>)request.getAttribute("list2");
 @SuppressWarnings("unchecked")
 List<Turiage> list3=(List<Turiage>)session.getAttribute("list3");
 String kanryomessage=(String)session.getAttribute("kanryomessage");
+
 %>
 
 
@@ -287,6 +288,9 @@ $(function(){
 
 <a href="/20220915kaihatsu/ReadMSTKOKYAKU">
     <button    class="buttoncss"  type="button">顧客マスタ</button>
+</a>
+<a href="/20220915kaihatsu/Logout">
+    <button    class="buttoncss"  type="button">ログアウト</button>
 </a>
 <br>
 <br>
