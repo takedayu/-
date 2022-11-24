@@ -28,6 +28,7 @@ String searchseihin = (String)session.getAttribute("searchseihin");
 <head>
 <style>
 
+/*
 .indicator::before {
   content: "";
   height: 100px;
@@ -47,7 +48,7 @@ String searchseihin = (String)session.getAttribute("searchseihin");
   border-top-color: #555;
   margin-top: 105px;
 }
-
+*/
 
 .listcss{
     overflow: auto;
@@ -57,9 +58,10 @@ String searchseihin = (String)session.getAttribute("searchseihin");
 .listcss table{
     margin: 0;
     border-spacing: 0;
-    table-layout: fixed;
+    /*table-layout: fixed;*/
     width: 100%;
-
+	/*height:200%;*/
+	
 }
 
 .listcss td{
@@ -67,7 +69,8 @@ String searchseihin = (String)session.getAttribute("searchseihin");
     border-right: 1px solid #999;
     border-bottom: 1px solid #999;
     background: #FFF;
-    padding: 2px;
+    /*padding: 2px;
+    height: 30%;*/
 }
 
 .listcss tr:nth-child(even) td{
@@ -76,8 +79,6 @@ String searchseihin = (String)session.getAttribute("searchseihin");
 
 .listcss th{
 	cursor: pointer;
-
-	
     white-space: nowrap;
     border-right: 1px solid #999;
     border-bottom: 1px solid #999;
@@ -85,7 +86,8 @@ String searchseihin = (String)session.getAttribute("searchseihin");
     position: sticky;
     top: 0;
     left: 0;
-    
+	height: 100%;
+	
 }
 
 
@@ -117,10 +119,6 @@ String searchseihin = (String)session.getAttribute("searchseihin");
 	color: #ff0000;
 }
 
-.label{
-/* 背景の上から95％に色をつける */
-background:linear-gradient(to bottom,#f2f2f2 0% 95%, rgba(0,0,0,0) 95% 100%);
-}
 
 
 .buttoncss {
@@ -135,7 +133,8 @@ background:linear-gradient(to bottom,#f2f2f2 0% 95%, rgba(0,0,0,0) 95% 100%);
   opacity       : 1;         /* 透明度     */
   transition    : .3s;         /* なめらか変化 */
   border: none;/*線を消す*/
-  text-decoration: none;
+  text-decoration: none; 
+  
 }
 .buttoncss:hover {
   background    : rgb(0,140,86);     /* 背景色     */
@@ -148,13 +147,54 @@ background:linear-gradient(to bottom,#f2f2f2 0% 95%, rgba(0,0,0,0) 95% 100%);
 }
 
 
+.funcbuttoncss {
+  display       : inline-block;
+  font-size     : 12pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 4px 5px;   /* 余白       */
+  background    : #007749;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  opacity       : 1;         /* 透明度     */
+  transition    : .3s;         /* なめらか変化 */
+  border: none;/*線を消す*/
+  text-decoration: none; 
+  
+}
+.funcbuttoncss:hover {
+  background    : rgb(0,140,86);     /* 背景色     */
+}
+
+.funcbuttoncss:active {
+ /* border-bottom: solid 2px #fd9535;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);*/
+  background    : #007749;     /* 背景色     */   */  
+}
+
+
+.func {
+      display: flex;
+  justify-content: space-evenly;
+}
+
+
+
+
 
 body {
 	width:90%;
     margin: 0 auto;
 }
 
+.label{
+/* 背景の上から95％に色をつける */
+background:linear-gradient(to bottom,#f2f2f2 0% 95%, rgba(0,0,0,0) 95% 100%);
+}
 
+    p{
+margin:0 0 0em; /*上 左右 下*/
+}
 
 </style>
 
@@ -342,7 +382,9 @@ for(Turiage uriage:list){
 <td><%=uriage.getUriagesuryo() %></td>
 <td><%=uriage.getUriage() %></td>
 <td>
-<a class="buttoncss" href="/20220915kaihatsu/DeleteTURIAGE?URIAGE_NO=<%=uriage.getUriageno() %>" onclick="return confirm('売上No.<%=uriage.getUriageno()%>を削除してよろしいですか？');">削除</a>
+<span class="func">
+<a class="funcbuttoncss" href="/20220915kaihatsu/DeleteTURIAGE?URIAGE_NO=<%=uriage.getUriageno() %>" onclick="return confirm('売上No.<%=uriage.getUriageno()%>を削除してよろしいですか？');">削除</a>
+</span>
 </td>
 </tr>
 <%} %>

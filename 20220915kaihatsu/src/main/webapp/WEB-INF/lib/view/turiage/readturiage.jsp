@@ -17,6 +17,7 @@ String kanryomessage=(String)session.getAttribute("kanryomessage");
 
 <style>
 
+/*
 .indicator::before {
   content: "";
   height: 100px;
@@ -36,7 +37,7 @@ String kanryomessage=(String)session.getAttribute("kanryomessage");
   border-top-color: #555;
   margin-top: 105px;
 }
-
+*/
 
 .listcss{
     overflow: auto;
@@ -46,9 +47,10 @@ String kanryomessage=(String)session.getAttribute("kanryomessage");
 .listcss table{
     margin: 0;
     border-spacing: 0;
-    table-layout: fixed;
+    /*table-layout: fixed;*/
     width: 100%;
-
+	/*height:200%;*/
+	
 }
 
 .listcss td{
@@ -56,7 +58,8 @@ String kanryomessage=(String)session.getAttribute("kanryomessage");
     border-right: 1px solid #999;
     border-bottom: 1px solid #999;
     background: #FFF;
-    padding: 2px;
+    /*padding: 2px;
+    height: 30%;*/
 }
 
 .listcss tr:nth-child(even) td{
@@ -65,8 +68,6 @@ String kanryomessage=(String)session.getAttribute("kanryomessage");
 
 .listcss th{
 	cursor: pointer;
-
-	
     white-space: nowrap;
     border-right: 1px solid #999;
     border-bottom: 1px solid #999;
@@ -74,7 +75,8 @@ String kanryomessage=(String)session.getAttribute("kanryomessage");
     position: sticky;
     top: 0;
     left: 0;
-    
+	height: 100%;
+	
 }
 
 
@@ -120,7 +122,8 @@ String kanryomessage=(String)session.getAttribute("kanryomessage");
   opacity       : 1;         /* 透明度     */
   transition    : .3s;         /* なめらか変化 */
   border: none;/*線を消す*/
-  text-decoration: none;
+  text-decoration: none; 
+  
 }
 .buttoncss:hover {
   background    : rgb(0,140,86);     /* 背景色     */
@@ -131,6 +134,42 @@ String kanryomessage=(String)session.getAttribute("kanryomessage");
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);*/
   background    : #007749;     /* 背景色     */   */  
 }
+
+
+.funcbuttoncss {
+  display       : inline-block;
+  font-size     : 12pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 4px 5px;   /* 余白       */
+  background    : #007749;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  opacity       : 1;         /* 透明度     */
+  transition    : .3s;         /* なめらか変化 */
+  border: none;/*線を消す*/
+  text-decoration: none; 
+  
+}
+.funcbuttoncss:hover {
+  background    : rgb(0,140,86);     /* 背景色     */
+}
+
+.funcbuttoncss:active {
+ /* border-bottom: solid 2px #fd9535;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);*/
+  background    : #007749;     /* 背景色     */   */  
+}
+
+
+.func {
+      display: flex;
+  justify-content: space-evenly;
+}
+
+
+
+
 
 body {
 	width:90%;
@@ -317,8 +356,9 @@ for(Turiage uriage:list){
 <td><%=uriage.getUriagesuryo() %></td>
 <td><%=uriage.getUriage() %></td>
 <td>
-
-<a class="buttoncss" href="/20220915kaihatsu/DeleteTURIAGE?URIAGE_NO=<%=uriage.getUriageno() %>" onclick="return confirm('製品コード<%=uriage.getUriageno()%>を削除してよろしいですか？');">削除</a>
+<span class="func">
+<a class="funcbuttoncss" href="/20220915kaihatsu/DeleteTURIAGE?URIAGE_NO=<%=uriage.getUriageno() %>" onclick="return confirm('製品コード<%=uriage.getUriageno()%>を削除してよろしいですか？');">削除</a>
+</span>
  <!-- 
 <button onclick="deleteshori();">削除</button>
 <script>

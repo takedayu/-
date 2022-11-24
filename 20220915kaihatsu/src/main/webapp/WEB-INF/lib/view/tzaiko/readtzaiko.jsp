@@ -16,6 +16,7 @@ List<Tzaiko> list3=(List<Tzaiko>)session.getAttribute("list3");
 
 <style>
 
+/*
 .indicator::before {
   content: "";
   height: 100px;
@@ -35,7 +36,7 @@ List<Tzaiko> list3=(List<Tzaiko>)session.getAttribute("list3");
   border-top-color: #555;
   margin-top: 105px;
 }
-
+*/
 
 .listcss{
     overflow: auto;
@@ -55,7 +56,7 @@ List<Tzaiko> list3=(List<Tzaiko>)session.getAttribute("list3");
     border-right: 1px solid #999;
     border-bottom: 1px solid #999;
     background: #FFF;
-    padding: 2px;
+    /*padding: 2px;*/
 }
 
 .listcss tr:nth-child(even) td{
@@ -64,8 +65,6 @@ List<Tzaiko> list3=(List<Tzaiko>)session.getAttribute("list3");
 
 .listcss th{
 	cursor: pointer;
-
-	
     white-space: nowrap;
     border-right: 1px solid #999;
     border-bottom: 1px solid #999;
@@ -73,7 +72,7 @@ List<Tzaiko> list3=(List<Tzaiko>)session.getAttribute("list3");
     position: sticky;
     top: 0;
     left: 0;
-    
+    height: 100%;
 }
 
 

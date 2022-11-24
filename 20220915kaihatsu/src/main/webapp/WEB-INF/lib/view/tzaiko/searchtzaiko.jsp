@@ -22,6 +22,7 @@ String searchcode = (String)session.getAttribute("searchcode");
 <head>
 <style>
 
+/*
 .indicator::before {
   content: "";
   height: 100px;
@@ -41,7 +42,7 @@ String searchcode = (String)session.getAttribute("searchcode");
   border-top-color: #555;
   margin-top: 105px;
 }
-
+*/
 
 .listcss{
     overflow: auto;
@@ -61,7 +62,7 @@ String searchcode = (String)session.getAttribute("searchcode");
     border-right: 1px solid #999;
     border-bottom: 1px solid #999;
     background: #FFF;
-    padding: 2px;
+    /*padding: 2px;*/
 }
 
 .listcss tr:nth-child(even) td{
@@ -70,8 +71,6 @@ String searchcode = (String)session.getAttribute("searchcode");
 
 .listcss th{
 	cursor: pointer;
-
-	
     white-space: nowrap;
     border-right: 1px solid #999;
     border-bottom: 1px solid #999;
@@ -79,7 +78,7 @@ String searchcode = (String)session.getAttribute("searchcode");
     position: sticky;
     top: 0;
     left: 0;
-    
+    height: 100%;
 }
 
 
@@ -111,10 +110,6 @@ String searchcode = (String)session.getAttribute("searchcode");
 	color: #ff0000;
 }
 
-.label{
-/* 背景の上から95％に色をつける */
-background:linear-gradient(to bottom,#f2f2f2 0% 95%, rgba(0,0,0,0) 95% 100%);
-}
 
 
 .buttoncss {
@@ -141,11 +136,14 @@ background:linear-gradient(to bottom,#f2f2f2 0% 95%, rgba(0,0,0,0) 95% 100%);
   background    : #007749;     /* 背景色     */   */  
 }
 
-
-
 body {
 	width:90%;
     margin: 0 auto;
+}
+
+.label{
+/* 背景の上から95％に色をつける */
+background:linear-gradient(to bottom,#f2f2f2 0% 95%, rgba(0,0,0,0) 95% 100%);
 }
 
 
