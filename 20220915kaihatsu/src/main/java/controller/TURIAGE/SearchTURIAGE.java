@@ -24,7 +24,7 @@ import model.Turiage;
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
 		    request.setCharacterEncoding("UTF-8");
 
-			HttpSession session = request.getSession(true);
+			HttpSession session = request.getSession(false);
 
 //			int searchno=Integer.parseInt(request.getParameter("searchno"));
 			String searchno=request.getParameter("searchno");

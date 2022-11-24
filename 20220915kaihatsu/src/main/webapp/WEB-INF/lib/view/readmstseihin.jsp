@@ -8,6 +8,7 @@ List<Mstseihin> list2=(List<Mstseihin>)request.getAttribute("list2");
 @SuppressWarnings("unchecked")
 List<Mstseihin> list3=(List<Mstseihin>)session.getAttribute("list3");
 String kanryomessage=(String)session.getAttribute("kanryomessage");
+String userid=(String)session.getAttribute("userid");
 %>
 
 <!DOCTYPE html>
@@ -310,7 +311,11 @@ $(function(){
 <a href="/20220915kaihatsu/ReadMSTKOKYAKU">
     <button    class="buttoncss"  type="button">顧客マスタ</button>
 </a>
+<a href="/20220915kaihatsu/Logout">
+    <button    class="buttoncss"  type="button">ログアウト</button>
+</a>
 <br>
+<p><%=userid %></p>
 <br>
 <%if(kanryomessage != null){ %>
 <p><%=kanryomessage %></p>

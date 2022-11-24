@@ -29,7 +29,7 @@ public class SearchMSTKOKYAKU extends HttpServlet {
         
 	    request.setCharacterEncoding("UTF-8");
 
-		HttpSession session = request.getSession(true);
+		HttpSession session = request.getSession(false);
 		
 		String searchname=request.getParameter("searchname");
 		String searchcode=request.getParameter("searchcode");

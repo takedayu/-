@@ -19,9 +19,7 @@ import model.Turiage;
 		private static final long serialVersionUID = 1L;
 
 		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			HttpSession session = request.getSession(
-
-					);
+			HttpSession session = request.getSession(false);
 			UriageDAO dao=new UriageDAO();
 			List<Turiage> list=dao.findAll();
 			UriageDAO dao2=new UriageDAO();
@@ -29,10 +27,10 @@ import model.Turiage;
 			request.setAttribute("list", list);
 			request.setAttribute("list2", list2);
 
-			
 			RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/lib/view/turiage/readturiage.jsp");
 			rd.forward(request, response);
-			session.invalidate();			
+			session.removeAttribute("kanryomessage");
+//			session.invalidate();
 
 		}
 

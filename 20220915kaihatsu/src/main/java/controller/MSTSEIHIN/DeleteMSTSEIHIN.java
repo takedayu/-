@@ -22,7 +22,7 @@ public class DeleteMSTSEIHIN extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession(true);
+		HttpSession session = request.getSession(false);
 		String id=request.getParameter("SEIHIN_CODE");
 		if(id !=null) {
 			session.setAttribute("kanryomessage",("削除が完了しました。"));

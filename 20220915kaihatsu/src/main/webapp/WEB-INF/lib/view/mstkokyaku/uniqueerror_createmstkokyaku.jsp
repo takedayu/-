@@ -119,6 +119,14 @@ margin:0 0 0em; /*上 左右 下*/
 <button class="buttoncss" type="submit">追加</button>
 <button class="cancelbuttoncss" type="button" onclick="closeWin2()">閉じる</button>
 <script>
+function kakunin() {
+	if(confirm('登録してよろしいですか？') == true){
+		window.onbeforeunload=null;
+		return true;
+	}else{
+		return false;
+	}
+}
 
 function closeWin2() {
 //	if (confirm('入力内容は破棄されます') == true){
