@@ -16,7 +16,7 @@ String kanryomessage=(String)session.getAttribute("kanryomessage");
 <head>
 
 <style>
-
+/*
 .indicator::before {
   content: "";
   height: 100px;
@@ -36,7 +36,7 @@ String kanryomessage=(String)session.getAttribute("kanryomessage");
   border-top-color: #555;
   margin-top: 105px;
 }
-
+*/
 
 .listcss{
     overflow: auto;
@@ -46,9 +46,10 @@ String kanryomessage=(String)session.getAttribute("kanryomessage");
 .listcss table{
     margin: 0;
     border-spacing: 0;
-    table-layout: fixed;
+    /*table-layout: fixed;*/
     width: 100%;
-
+	/*height:200%;*/
+	
 }
 
 .listcss td{
@@ -56,7 +57,8 @@ String kanryomessage=(String)session.getAttribute("kanryomessage");
     border-right: 1px solid #999;
     border-bottom: 1px solid #999;
     background: #FFF;
-    padding: 2px;
+    /*padding: 2px;
+    height: 30%;*/
 }
 
 .listcss tr:nth-child(even) td{
@@ -65,8 +67,6 @@ String kanryomessage=(String)session.getAttribute("kanryomessage");
 
 .listcss th{
 	cursor: pointer;
-
-	
     white-space: nowrap;
     border-right: 1px solid #999;
     border-bottom: 1px solid #999;
@@ -74,7 +74,8 @@ String kanryomessage=(String)session.getAttribute("kanryomessage");
     position: sticky;
     top: 0;
     left: 0;
-    
+	height: 100%;
+	
 }
 
 
@@ -120,7 +121,8 @@ String kanryomessage=(String)session.getAttribute("kanryomessage");
   opacity       : 1;         /* 透明度     */
   transition    : .3s;         /* なめらか変化 */
   border: none;/*線を消す*/
-  text-decoration: none;
+  text-decoration: none; 
+  
 }
 .buttoncss:hover {
   background    : rgb(0,140,86);     /* 背景色     */
@@ -131,6 +133,66 @@ String kanryomessage=(String)session.getAttribute("kanryomessage");
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);*/
   background    : #007749;     /* 背景色     */   */  
 }
+
+
+.funcbuttoncss {
+  display       : inline-block;
+  font-size     : 12pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 4px 5px;   /* 余白       */
+  background    : #007749;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  opacity       : 1;         /* 透明度     */
+  transition    : .3s;         /* なめらか変化 */
+  border: none;/*線を消す*/
+  text-decoration: none; 
+  
+}
+.funcbuttoncss:hover {
+  background    : rgb(0,140,86);     /* 背景色     */
+}
+
+.funcbuttoncss:active {
+ /* border-bottom: solid 2px #fd9535;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);*/
+  background    : #007749;     /* 背景色     */   */  
+}
+
+.cancelbuttoncss {
+  display       : inline-block;
+  font-size     : 12pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 4px 5px;   /* 余白       */
+  background    : #808080;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  opacity       : 1;         /* 透明度     */
+  transition    : .3s;         /* なめらか変化 */
+  border: none;/*線を消す*/
+  text-decoration: none;
+}
+.cancelbuttoncss:hover {
+  background    : rgb(145,145,145);     /* 背景色     */
+}
+
+.cancelbuttoncss:active {
+ /* border-bottom: solid 2px #fd9535;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);*/
+  background    : #808080;     /* 背景色     */   */  
+}
+
+
+.func {
+      display: flex;
+  justify-content: space-evenly;
+}
+
+
+
+
 
 body {
 	width:90%;
@@ -295,9 +357,10 @@ for(Mstkokyaku kokyaku:list){
 <td><%=kokyaku.getKokyaku_address() %></td>
 <td><%=kokyaku.getKokyaku_tel() %></td>
 <td>
-
-<button class="buttoncss" onClick="window.open('/20220915kaihatsu/UpdateMSTKOKYAKU?KOKYAKU_CODE=<%=kokyaku.getKokyaku_code() %>','null','menubar=0');" >更新</button>
-<a class="buttoncss" href="/20220915kaihatsu/DeleteMSTKOKYAKU?KOKYAKU_CODE=<%=kokyaku.getKokyaku_code() %>" onclick="return confirm('顧客コード<%=kokyaku.getKokyaku_code()%>を削除してよろしいですか？');">削除</a>
+<span class="func">
+<button class="funcbuttoncss" onClick="window.open('/20220915kaihatsu/UpdateMSTKOKYAKU?KOKYAKU_CODE=<%=kokyaku.getKokyaku_code() %>','null','menubar=0');" >更新</button>
+<a class="cancelbuttoncss" href="/20220915kaihatsu/DeleteMSTKOKYAKU?KOKYAKU_CODE=<%=kokyaku.getKokyaku_code() %>" onclick="return confirm('顧客コード<%=kokyaku.getKokyaku_code()%>を削除してよろしいですか？');">削除</a>
+</span>
  <!-- 
 <button onclick="deleteshori();">削除</button>
 <script>
