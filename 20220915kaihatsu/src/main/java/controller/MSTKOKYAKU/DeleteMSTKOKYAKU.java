@@ -26,17 +26,19 @@ public class DeleteMSTKOKYAKU extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		String id=request.getParameter("KOKYAKU_CODE");
 		if(id !=null) {
-
-			session.setAttribute("kanryomessage",("削除が完了しました。"));
 			KokyakuDAO dao=new KokyakuDAO();
 			dao.deleteOne(id);
 			 
 			String dummyname = ("");
 			List<Mstkokyaku> list3=dao.searchAll(id,dummyname);
 			session.setAttribute("list3", list3);
+			if(list3.size() == 0) {
+				session.setAttribute("kanryomessage",("削除が完了しました。"));
+			}else {
+				session.setAttribute("errormessage",("子レコードがあるため削除できません！"));
+			}
 			
 		}
-		
 		response.sendRedirect("/20220915kaihatsu/ReadMSTKOKYAKU");
 	}
-	}
+}

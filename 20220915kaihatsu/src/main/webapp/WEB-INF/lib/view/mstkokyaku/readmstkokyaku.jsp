@@ -8,6 +8,7 @@ List<Mstkokyaku> list2=(List<Mstkokyaku>)request.getAttribute("list2");
 @SuppressWarnings("unchecked")
 List<Mstkokyaku> list3=(List<Mstkokyaku>)session.getAttribute("list3");
 String kanryomessage=(String)session.getAttribute("kanryomessage");
+String errormessage=(String)session.getAttribute("errormessage");
 String userid=(String)session.getAttribute("userid");
 %>
 
@@ -126,6 +127,9 @@ $(function(){
 <%if(kanryomessage != null){ %>
 <p><%=kanryomessage %></p>
 <%} %>
+<%if(errormessage != null){ %>
+<p class="errormessage"><%=errormessage %></p>
+<%} %>
 <button class="buttoncss" type="button" onclick="window.open('/20220915kaihatsu/CreateMSTKOKYAKU','null','menubar=0');">新規登録</button><br>
 
 <form action="/20220915kaihatsu/SearchMSTKOKYAKU" method="post">
@@ -144,12 +148,6 @@ $(function(){
 
 </form>
 
-
-<% if(list3!=null && list3.size() == 1){ %>
-<script>
-	alert('ORA-02292: 整合性制約に違反しています！')
-</script>
-<%} %>
 <div class="listcss">
 <table border="1" id="table" >
 <thead>
@@ -159,7 +157,6 @@ $(function(){
 </thead>
 <tbody>
 <%
-
 for(Mstkokyaku kokyaku:list){
 %>
 
