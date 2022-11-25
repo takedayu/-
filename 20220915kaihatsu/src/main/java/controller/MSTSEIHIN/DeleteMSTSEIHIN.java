@@ -25,14 +25,17 @@ public class DeleteMSTSEIHIN extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		String id=request.getParameter("SEIHIN_CODE");
 		if(id !=null) {
-			session.setAttribute("kanryomessage",("削除が完了しました。"));
 			SeihinDAO dao=new SeihinDAO();
 			dao.deleteOne(id);
 			
 			String dummyname = ("");
 			List<Mstseihin> list3=dao.searchAll(dummyname,id);
 			session.setAttribute("list3", list3);
-			
+			if(list3.size() == 0) {
+				session.setAttribute("kanryomessage",("削除が完了しました。"));
+			}else {
+				session.setAttribute("errormessage",("子レコードがあるため削除できません！"));
+			}
 		}
 		response.sendRedirect("/20220915kaihatsu/ReadMSTSEIHIN");
 	}

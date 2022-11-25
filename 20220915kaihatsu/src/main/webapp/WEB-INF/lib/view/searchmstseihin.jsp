@@ -147,12 +147,7 @@ $(function(){
 <!-- button type="button" onclick=history.back()>戻る</button> -->
 </form>
 
-<% if(list3!=null && list3.size() == 1){ %>
-<script>
-	alert('ORA-02292: 整合性制約に違反しています！')
-</script>
-<%} %>
-<br>
+
 <div class="listcss">
 <table border="1" id="table">
 <thead>

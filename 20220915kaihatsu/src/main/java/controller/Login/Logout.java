@@ -20,7 +20,7 @@ public class Logout extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		session.invalidate();
 		
-		request.setAttribute("errormessage",("ログアウトしました。")); 
+		request.setAttribute("logoutmessage",("ログアウトしました。")); 
 		
 		RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/lib/view/login/login.jsp");
 		rd.forward(request, response);

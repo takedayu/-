@@ -29,6 +29,7 @@ public class ReadMSTKOKYAKU extends HttpServlet {
 		RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/lib/view/mstkokyaku/readmstkokyaku.jsp");
 		rd.forward(request, response);
 		session.removeAttribute("kanryomessage");
+		session.removeAttribute("errormessage");
 //		session.invalidate();			
 
 	}	
