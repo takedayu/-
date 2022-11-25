@@ -47,7 +47,7 @@ String searchcode = (String)session.getAttribute("searchcode");
 .listcss{
     overflow: auto;
      /*width: 100%;*/
-    height: 400px;
+    height: 450px;
 }
 .listcss table{
     margin: 0;
@@ -127,6 +127,7 @@ String searchcode = (String)session.getAttribute("searchcode");
   transition    : .08s;         /* なめらか変化 */
   border: none;/*線を消す*/
   text-decoration: none; 
+  border-radius:5px;
   
 }
 .buttoncss:hover {
@@ -150,13 +151,15 @@ String searchcode = (String)session.getAttribute("searchcode");
   color         : #ffffff;     /* 文字色     */
   line-height   : 1em;         /* 1行の高さ  */
   opacity       : 1;         /* 透明度     */
-  transition    : .3s;         /* なめらか変化 */
+  transition    : .08s;         /* なめらか変化 */
   border: none;/*線を消す*/
+  text-decoration: none; 
+  border-radius:5px;
   text-decoration: none; 
   
 }
 .funcbuttoncss:hover {
-  background    : rgb(0,140,86);     /* 背景色     */
+  background    : #fcd404;     /* 背景色     */
 }
 
 .funcbuttoncss:active {
@@ -175,12 +178,14 @@ String searchcode = (String)session.getAttribute("searchcode");
   color         : #ffffff;     /* 文字色     */
   line-height   : 1em;         /* 1行の高さ  */
   opacity       : 1;         /* 透明度     */
-  transition    : .3s;         /* なめらか変化 */
+  transition    : .08s;         /* なめらか変化 */
   border: none;/*線を消す*/
+  text-decoration: none; 
+  border-radius:5px;
   text-decoration: none;
 }
 .cancelbuttoncss:hover {
-  background    : rgb(145,145,145);     /* 背景色     */
+  background    : #d3d3d3;     /* 背景色     */
 }
 
 .cancelbuttoncss:active {
@@ -344,7 +349,7 @@ $(function(){
 	alert('ORA-02292: 整合性制約に違反しています！')
 </script>
 <%} %>
-
+<br>
 <div class="listcss">
 <table border="1" id="table">
 <thead>
