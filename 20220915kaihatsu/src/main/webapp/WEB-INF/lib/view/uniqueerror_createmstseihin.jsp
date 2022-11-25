@@ -32,7 +32,7 @@ Mstseihin tsuika=(Mstseihin)request.getAttribute("tsuika");
 <label class="label" for="seihinteika1">　　　定価&nbsp;&nbsp;</label>
 	<input id="seihinteika1" type="text" name="SEIHIN_TEIKA" value="<%=tsuika.getSeihinteika() %>" pattern="[0-9]{0,10}" title="10桁以下の半角数字のみ入力可能です。"><br><br>
 <button class="buttoncss" type="submit">追加</button>
-<button class="cancelbuttoncss" type="button" onclick="closeWin2()">閉じる</button>
+<button class="closebuttoncss" type="button" onclick="closeWin2()">閉じる</button>
 
 <script>
 function kakunin() {

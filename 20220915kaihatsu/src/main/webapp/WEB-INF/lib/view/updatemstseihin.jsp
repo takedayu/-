@@ -39,7 +39,7 @@ Mstseihin koushin=(Mstseihin)request.getAttribute("koushin");
 <button class="buttoncss" type="submit">更新</button>
 <!-- <button name="btn" onclick="confirmsubmit()">更新</button> -->
 
-<button class="cancelbuttoncss" type="button" onclick="closeWin2();">閉じる</button>
+<button class="closebuttoncss" type="button" onclick="closeWin2();">閉じる</button>
 
 <script>
 function kakunin() {

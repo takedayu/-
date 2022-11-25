@@ -36,7 +36,7 @@
 	<input id="kokyakutel1" type="text" name="KOKYAKU_TEL" value="<%=mstkokyaku.getKokyaku_tel() %>"
 	pattern="[0-9]{10,11}" title="10～11桁の半角数字（ハイフンなし）"><br><br>
 <button class="buttoncss" type="submit">追加</button>
-<button class="cancelbuttoncss" type="button" onclick="closeWin2()">閉じる</button>
+<button class="closebuttoncss" type="button" onclick="closeWin2()">閉じる</button>
 <script>
 function kakunin() {
 	if(confirm('登録してよろしいですか？') == true){
