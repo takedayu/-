@@ -29,7 +29,10 @@ public class CreateTURIAGE extends HttpServlet {
 
   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		HttpSession session = request.getSession(false);
+		if(session == null || session.getAttribute("userid") == null) {
+			response.sendRedirect("/20220915kaihatsu/Login");
+		}else {
 		UriageDAO dao2=new UriageDAO();
 		List<Turiage> list2=dao2.listAll();
 		request.setAttribute("list2", list2);
@@ -48,6 +51,7 @@ public class CreateTURIAGE extends HttpServlet {
 		
 		RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/lib/view/turiage/createturiage.jsp");
 		rd.forward(request, response);
+		}
 	}
 
 

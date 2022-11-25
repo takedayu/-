@@ -22,6 +22,10 @@ public class UpdateMSTKOKYAKU extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession(false);
+		if(session == null || session.getAttribute("userid") == null) {
+			response.sendRedirect("/20220915kaihatsu/Login");
+		}else {
 		String s_id=request.getParameter("KOKYAKU_CODE");
 		if(s_id==null) {
 			response.sendRedirect("/20220915kaihatsu/ReadMSTKOKYAKU");
@@ -32,7 +36,8 @@ public class UpdateMSTKOKYAKU extends HttpServlet {
 			request.getRequestDispatcher("/WEB-INF/lib/view/mstkokyaku/updatemstkokyaku.jsp").forward(request, response);
 		}
 	}
-
+}
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
 		request.setCharacterEncoding("UTF-8");

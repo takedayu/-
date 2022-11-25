@@ -26,10 +26,12 @@ public class SearchMSTKOKYAKU extends HttpServlet {
 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
 	    request.setCharacterEncoding("UTF-8");
-
 		HttpSession session = request.getSession(false);
+		
+		if(session == null || session.getAttribute("userid") == null) {
+			response.sendRedirect("/20220915kaihatsu/Login");
+		}else {
 		
 		String searchname=request.getParameter("searchname");
 		String searchcode=request.getParameter("searchcode");
@@ -48,7 +50,7 @@ public class SearchMSTKOKYAKU extends HttpServlet {
 		RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/lib/view/mstkokyaku/searchmstkokyaku.jsp");
 		rd.forward(request, response);
 //		response.sendRedirect("/20220915kaihatsu/ReadMSTSEIHIN");
-		
+		}
 	}
     
 }
