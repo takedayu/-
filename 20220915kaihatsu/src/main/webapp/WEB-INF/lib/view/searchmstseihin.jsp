@@ -108,7 +108,6 @@ String searchcode = (String)session.getAttribute("searchcode");
 
 
 
-
 .errormessage {
 	color: #ff0000;
 }
@@ -125,13 +124,13 @@ String searchcode = (String)session.getAttribute("searchcode");
   color         : #ffffff;     /* 文字色     */
   line-height   : 1em;         /* 1行の高さ  */
   opacity       : 1;         /* 透明度     */
-  transition    : .3s;         /* なめらか変化 */
+  transition    : .08s;         /* なめらか変化 */
   border: none;/*線を消す*/
   text-decoration: none; 
   
 }
 .buttoncss:hover {
-  background    : rgb(0,140,86);     /* 背景色     */
+  background    : #fcd404;     /* 背景色     */
 }
 
 .buttoncss:active {
