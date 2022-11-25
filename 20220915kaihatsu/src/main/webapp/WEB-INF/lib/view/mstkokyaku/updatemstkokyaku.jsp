@@ -39,7 +39,7 @@ Mstkokyaku koushin=(Mstkokyaku)request.getAttribute("koushin");
 <br>
 <button class="buttoncss" type="submit">更新</button>
 <!-- <button class="buttoncss" type="submit" onclick="confirm('更新してよろしいですか？')">更新</button> -->
-<button class="cancelbuttoncss" type="button" onclick="closeWin2()">閉じる</button>
+<button class="closebuttoncss" type="button" onclick="closeWin2()">閉じる</button>
 
 <script>
 function kakunin() {

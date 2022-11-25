@@ -147,6 +147,7 @@
   background    : #007749;     /* 背景色     */ 
 }
 
+
 .cancelbuttoncss {
   display       : inline-block;
   font-size     : 12pt;        /* 文字サイズ */
@@ -168,6 +169,37 @@
 }
 
 .cancelbuttoncss:active {
+ /* border-bottom: solid 2px #fd9535;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);*/
+  background    : #808080;     /* 背景色     */ 
+}
+
+
+
+
+
+
+.closebuttoncss {
+  display       : inline-block;
+  font-size     : 12pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 7px 8px;   /* 余白       */
+  background    : #808080;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  opacity       : 1;         /* 透明度     */
+  transition    : .08s;         /* なめらか変化 */
+  border: none;/*線を消す*/
+  text-decoration: none; 
+  border-radius:5px;
+  text-decoration: none;
+}
+.closebuttoncss:hover {
+  background    : #d3d3d3;     /* 背景色     */
+}
+
+.closebuttoncss:active {
  /* border-bottom: solid 2px #fd9535;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);*/
   background    : #808080;     /* 背景色     */ 

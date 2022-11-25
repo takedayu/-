@@ -68,7 +68,7 @@ List<Mstkokyaku> kokyakulist=(List<Mstkokyaku>)request.getAttribute("kokyakulist
 <label class="label" for="uriage1">　　　売上高&nbsp;&nbsp;</label>
 	<input id="uriage1" type="text" name="URIAGE" pattern="[0-9]{0,10}" title="10桁以下の半角数字のみ入力可能です。"><br><br>
 <button class="buttoncss" type="submit">追加</button>
-<button class="cancelbuttoncss" type="button" onclick="closeWin2()">閉じる</button>
+<button class="closebuttoncss" type="button" onclick="closeWin2()">閉じる</button>
 <script>
 function kakunin() {
 	if(confirm('登録してよろしいですか？') == true){
