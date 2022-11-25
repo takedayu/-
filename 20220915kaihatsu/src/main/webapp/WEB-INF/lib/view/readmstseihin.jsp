@@ -296,6 +296,7 @@ $(function(){
 </head>
 <body>
 
+<header>
 <a href="/20220915kaihatsu/ReadTURIAGE">
     <button   class="buttoncss"   type="button">売上表</button>
 </a>
@@ -314,6 +315,8 @@ $(function(){
 <a href="/20220915kaihatsu/Logout">
     <button    class="buttoncss"  type="button">ログアウト</button>
 </a>
+</header>
+
 <br>
 <p><%=userid %></p>
 <br>
