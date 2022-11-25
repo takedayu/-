@@ -13,7 +13,7 @@ List<Mstseihin> list3=(List<Mstseihin>)session.getAttribute("list3");
 
 String searchname = (String)session.getAttribute("searchname");
 String searchcode = (String)session.getAttribute("searchcode");
-
+String userid=(String)session.getAttribute("userid");
 %>
 
 <!DOCTYPE html>
@@ -201,7 +201,10 @@ String searchcode = (String)session.getAttribute("searchcode");
   justify-content: space-evenly;
 }
 
-
+.headerright {
+  position: absolute;
+ right: 7%;
+}
 
 
 
@@ -305,24 +308,17 @@ $(function(){
 <body>
 
 <header>
-<a href="/20220915kaihatsu/ReadTURIAGE">
-    <button   class="buttoncss"   type="button">売上表</button>
-</a>
 
-<a href="/20220915kaihatsu/ReadTZAIKO">
-    <button    class="buttoncss"  type="button">在庫表</button>
-</a>
+<button class="buttoncss" onclick="location.href='/20220915kaihatsu/ReadTURIAGE'">売上表</button>
+<button class="buttoncss" onclick="location.href='/20220915kaihatsu/ReadTZAIKO'">在庫表</button>
+<button class="buttoncss" onclick="location.href='/20220915kaihatsu/ReadMSTSEIHIN'">製品マスタ</button>
+<button class="buttoncss" onclick="location.href='/20220915kaihatsu/ReadMSTKOKYAKU'">顧客マスタ</button>
 
-<a href="/20220915kaihatsu/ReadMSTSEIHIN">
-    <button    class="buttoncss"  type="button">製品マスタ</button>
-</a>
+<span class="headerright">
+<span style="padding:20px"><%=userid %></span>
+<button class="buttoncss" onclick="location.href='/20220915kaihatsu/Logout'">ログアウト</button>
+</span>
 
-<a href="/20220915kaihatsu/ReadMSTKOKYAKU">
-    <button    class="buttoncss"  type="button">顧客マスタ</button>
-</a>
-<a href="/20220915kaihatsu/Logout">
-    <button    class="buttoncss"  type="button">ログアウト</button>
-</a>
 </header>
 
 <br>

@@ -13,7 +13,7 @@ List<Tzaiko> list3=(List<Tzaiko>)session.getAttribute("list3");
 
 String searchname = (String)session.getAttribute("searchname");
 String searchcode = (String)session.getAttribute("searchcode");
-
+String userid=(String)session.getAttribute("userid");
 %>
 
 <!DOCTYPE html>
@@ -146,7 +146,10 @@ body {
 background:linear-gradient(to bottom,#f2f2f2 0% 95%, rgba(0,0,0,0) 95% 100%);
 }
 
-
+.headerright {
+  position: absolute;
+ right: 7%;
+}
 
 </style>
 
@@ -233,24 +236,17 @@ $(function(){
 
 
 <header>
-<a href="/20220915kaihatsu/ReadTURIAGE">
-    <button   class="buttoncss"   type="button">売上表</button>
-</a>
 
-<a href="/20220915kaihatsu/ReadTZAIKO">
-    <button    class="buttoncss"  type="button">在庫表</button>
-</a>
+<button class="buttoncss" onclick="location.href='/20220915kaihatsu/ReadTURIAGE'">売上表</button>
+<button class="buttoncss" onclick="location.href='/20220915kaihatsu/ReadTZAIKO'">在庫表</button>
+<button class="buttoncss" onclick="location.href='/20220915kaihatsu/ReadMSTSEIHIN'">製品マスタ</button>
+<button class="buttoncss" onclick="location.href='/20220915kaihatsu/ReadMSTKOKYAKU'">顧客マスタ</button>
 
-<a href="/20220915kaihatsu/ReadMSTSEIHIN">
-    <button    class="buttoncss"  type="button">製品マスタ</button>
-</a>
+<span class="headerright">
+<span style="padding:20px"><%=userid %></span>
+<button class="buttoncss" onclick="location.href='/20220915kaihatsu/Logout'">ログアウト</button>
+</span>
 
-<a href="/20220915kaihatsu/ReadMSTKOKYAKU">
-    <button    class="buttoncss"  type="button">顧客マスタ</button>
-</a>
-<a href="/20220915kaihatsu/Logout">
-    <button    class="buttoncss"  type="button">ログアウト</button>
-</a>
 </header>
 
 
@@ -259,7 +255,7 @@ $(function(){
 <button class="buttoncss" type="button" onclick="window.open('/20220915kaihatsu/CreateMSTSEIHIN','null','menubar=0');">新規登録</button><br>
  -->
 <form action="/20220915kaihatsu/SearchTZAIKO" method="post">
-<label class="label" for="searchcode1">　製品コード：</label>
+<label class="label" for="searchcode1">　　製品コード&nbsp;</label>
 	<select name="searchcode" id="searchcode1">
 	<option value="">製品コードを選択</option>
 	<%for(Tzaiko box:list2){%>
@@ -272,7 +268,7 @@ $(function(){
 	<%}%>
 
 	</select>
-<label class="label" for="searchname2">　　　製品名：</label>
+<label class="label" for="searchname2">　　製品名&nbsp;</label>
 <input type="search" id="searchname2" name="searchname" value="<%= searchname %>">
 <button class="buttoncss" type="submit">検索</button>
 <!-- button type="button" onclick=history.back()>戻る</button> -->

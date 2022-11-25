@@ -7,6 +7,7 @@ List<Tzaiko> list=(List<Tzaiko>)request.getAttribute("list");
 List<Tzaiko> list2=(List<Tzaiko>)request.getAttribute("list2");
 @SuppressWarnings("unchecked")
 List<Tzaiko> list3=(List<Tzaiko>)session.getAttribute("list3");
+String userid=(String)session.getAttribute("userid");
 %>
 
 <!DOCTYPE html>
@@ -140,6 +141,10 @@ body {
 background:linear-gradient(to bottom,#f2f2f2 0% 95%, rgba(0,0,0,0) 95% 100%);
 }
 
+.headerright {
+  position: absolute;
+ right: 7%;
+}
 
 
 </style>
@@ -229,26 +234,18 @@ $(function(){
 <body>
 
 <header>
-<a href="/20220915kaihatsu/ReadTURIAGE">
-    <button   class="buttoncss"   type="button">売上表</button>
-</a>
 
-<a href="/20220915kaihatsu/ReadTZAIKO">
-    <button    class="buttoncss"  type="button">在庫表</button>
-</a>
+<button class="buttoncss" onclick="location.href='/20220915kaihatsu/ReadTURIAGE'">売上表</button>
+<button class="buttoncss" onclick="location.href='/20220915kaihatsu/ReadTZAIKO'">在庫表</button>
+<button class="buttoncss" onclick="location.href='/20220915kaihatsu/ReadMSTSEIHIN'">製品マスタ</button>
+<button class="buttoncss" onclick="location.href='/20220915kaihatsu/ReadMSTKOKYAKU'">顧客マスタ</button>
 
-<a href="/20220915kaihatsu/ReadMSTSEIHIN">
-    <button    class="buttoncss"  type="button">製品マスタ</button>
-</a>
+<span class="headerright">
+<span style="padding:20px"><%=userid %></span>
+<button class="buttoncss" onclick="location.href='/20220915kaihatsu/Logout'">ログアウト</button>
+</span>
 
-<a href="/20220915kaihatsu/ReadMSTKOKYAKU">
-    <button    class="buttoncss"  type="button">顧客マスタ</button>
-</a>
-<a href="/20220915kaihatsu/Logout">
-    <button    class="buttoncss"  type="button">ログアウト</button>
-</a>
 </header>
-
 
 <br>
 <!-- 
