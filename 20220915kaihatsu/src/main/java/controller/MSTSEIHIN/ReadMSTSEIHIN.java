@@ -20,17 +20,20 @@ import model.Mstseihin;
 
 		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			HttpSession session = request.getSession(false);
-			SeihinDAO dao=new SeihinDAO();
-			List<Mstseihin> list=dao.findAll();
-			SeihinDAO dao2=new SeihinDAO();
-			List<Mstseihin> list2=dao2.listAll();
-			request.setAttribute("list", list);
-			request.setAttribute("list2", list2);
-			RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/lib/view/readmstseihin.jsp");
-			rd.forward(request, response);
-			session.removeAttribute("kanryomessage");
-//			session.invalidate();
-
+			if(session == null) {
+				response.sendRedirect("/20220915kaihatsu/Login");
+			}else {
+				SeihinDAO dao=new SeihinDAO();
+				List<Mstseihin> list=dao.findAll();
+				SeihinDAO dao2=new SeihinDAO();
+				List<Mstseihin> list2=dao2.listAll();
+				request.setAttribute("list", list);
+				request.setAttribute("list2", list2);
+				RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/lib/view/readmstseihin.jsp");
+				rd.forward(request, response);
+				session.removeAttribute("kanryomessage");
+	//			session.invalidate();	
+			}
 		}
 
 	}
