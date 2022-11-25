@@ -287,7 +287,8 @@ $(function(){
     $('table tbody').html(arr);
   }
 
-});</script>
+});
+</script>
 
 
 
@@ -298,6 +299,8 @@ $(function(){
 </head>
 <body>
 
+
+<header>
 <a href="/20220915kaihatsu/ReadTURIAGE">
     <button   class="buttoncss"   type="button">売上表</button>
 </a>
@@ -316,7 +319,9 @@ $(function(){
 <a href="/20220915kaihatsu/Logout">
     <button    class="buttoncss"  type="button">ログアウト</button>
 </a>
-<br>
+</header>
+
+
 <br>
 <button class="buttoncss" type="button" onclick="window.open('/20220915kaihatsu/CreateMSTKOKYAKU','null','menubar=0');">新規登録</button><br>
 
