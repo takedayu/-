@@ -20,6 +20,9 @@ public class ReadMSTKOKYAKU extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
+		if(session == null || session.getAttribute("userid") == null) {
+			response.sendRedirect("/20220915kaihatsu/Login");
+		}else {
 		KokyakuDAO dao=new KokyakuDAO();
 		List<Mstkokyaku> list=dao.findAll();
 		KokyakuDAO dao2=new KokyakuDAO();
@@ -31,7 +34,7 @@ public class ReadMSTKOKYAKU extends HttpServlet {
 		session.removeAttribute("kanryomessage");
 		session.removeAttribute("errormessage");
 //		session.invalidate();			
-
+		}
 	}	
 		
 }

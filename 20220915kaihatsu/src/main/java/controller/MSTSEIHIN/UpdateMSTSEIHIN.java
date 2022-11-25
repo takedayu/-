@@ -22,6 +22,10 @@ public class UpdateMSTSEIHIN extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession(false);
+		if(session == null || session.getAttribute("userid") == null) {
+			response.sendRedirect("/20220915kaihatsu/Login");
+		}else {
 		String s_id=request.getParameter("SEIHIN_CODE");
 		if(s_id==null) {
 			response.sendRedirect("/20220915kaihatsu/ReadMSTSEIHIN");
@@ -30,9 +34,10 @@ public class UpdateMSTSEIHIN extends HttpServlet {
 			Mstseihin koushin=dao.findOne(s_id);
 			request.setAttribute("koushin", koushin);
 			request.getRequestDispatcher("/WEB-INF/lib/view/updatemstseihin.jsp").forward(request, response);
+			}
 		}
 	}
-
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
 		request.setCharacterEncoding("UTF-8");

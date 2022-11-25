@@ -20,6 +20,9 @@ import model.Mstseihin;
 
 		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			HttpSession session = request.getSession(false);
+			if(session == null || session.getAttribute("userid") == null) {
+				response.sendRedirect("/20220915kaihatsu/Login");
+			}else {
 				SeihinDAO dao=new SeihinDAO();
 				List<Mstseihin> list=dao.findAll();
 				SeihinDAO dao2=new SeihinDAO();
@@ -31,6 +34,7 @@ import model.Mstseihin;
 				session.removeAttribute("kanryomessage");
 				session.removeAttribute("errormessage");
 	//			session.invalidate();	
+			}
 		}
 
 	}

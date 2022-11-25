@@ -21,6 +21,9 @@ public class DeleteTURIAGE extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
+		if(session == null || session.getAttribute("userid") == null) {
+			response.sendRedirect("/20220915kaihatsu/Login");
+		}else {
 		String id=request.getParameter("URIAGE_NO");
 		if(id !=null) {
 			session.setAttribute("kanryomessage",("削除が完了しました。"));
@@ -33,8 +36,8 @@ public class DeleteTURIAGE extends HttpServlet {
 			
 		}
 		response.sendRedirect("/20220915kaihatsu/ReadTURIAGE");
+		}
 	}
-
 
 
 }

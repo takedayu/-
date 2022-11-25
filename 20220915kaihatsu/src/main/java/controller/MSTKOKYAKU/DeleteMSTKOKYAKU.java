@@ -24,6 +24,9 @@ public class DeleteMSTKOKYAKU extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
+		if(session == null || session.getAttribute("userid") == null) {
+			response.sendRedirect("/20220915kaihatsu/Login");
+		}else {
 		String id=request.getParameter("KOKYAKU_CODE");
 		if(id !=null) {
 			KokyakuDAO dao=new KokyakuDAO();
@@ -40,5 +43,6 @@ public class DeleteMSTKOKYAKU extends HttpServlet {
 			
 		}
 		response.sendRedirect("/20220915kaihatsu/ReadMSTKOKYAKU");
+		}
 	}
 }
