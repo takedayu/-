@@ -108,7 +108,6 @@ String searchcode = (String)session.getAttribute("searchcode");
 
 
 
-
 .errormessage {
 	color: #ff0000;
 }
