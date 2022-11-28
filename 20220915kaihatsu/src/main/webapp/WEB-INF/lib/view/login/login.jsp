@@ -4,7 +4,7 @@
 String userid = (String)request.getAttribute("userid");
 String userpassword = (String)request.getAttribute("userpassword");
 String errormessage = (String)request.getAttribute("errormessage");
-String logoutmessage = (String)request.getAttribute("logoutmessage");
+String logoutmessage = (String)session.getAttribute("logoutmessage");
 %>
 <!DOCTYPE html>
 <html>
@@ -15,33 +15,46 @@ String logoutmessage = (String)request.getAttribute("logoutmessage");
 
 <style>
 .box {
-    padding: 0.5em 1em;
-    margin: 2em 0;
-    width:275px;
+
+/*  border: solid 3px #000000;    */
+    width: 170px;
       margin-right: auto;
   margin-left: auto;
+  text-align: center;
+
 }
 
-/*style=display:block; margin:0 0 0 auto;*/
+.label {
+  display:block;
+  text-align: left;
+}
+
+.message{
+	padding: 1em 0;
+	text-align: center;
+}
 
 </style>
 
 </head>
 <body>
-
+<div class="message">
 <%if(errormessage != null){ %><p class="errormessage"><%=errormessage %></p><%} %>
 <%if(logoutmessage != null){ %><p><%=logoutmessage %></p><%} %>
-<form action="/20220915kaihatsu/Login" method="post">
+</div>
+
 <div class="box">
+<form action="/20220915kaihatsu/Login" method="post">
 <label class="label" for="userid">ユーザID</label>
 <input class="inputbox" type="search" id="userid" name="USER_ID" <%if(userid != null){ %>value="<%=userid %>"<%} %> required>
-<br>
+<br><br>
 <label class="label" for="userpassword">パスワード</label>
 <input class="inputbox" type="password" id="userpassword" name="USER_PASSWORD" <%if(userpassword != null){ %>value="<%=userpassword %>"<%} %> required>
 <br>
-<button class="buttoncss" type="submit">ログイン</button>
+<div class="loginbutton">
+<button class="buttoncss" style="margin: 1em 0;" type="submit">ログイン</button>
 </div>
-
 </form>
+</div>
 </body>
 </html>

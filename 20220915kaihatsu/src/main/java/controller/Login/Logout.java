@@ -2,7 +2,6 @@ package controller.Login;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,12 +17,10 @@ public class Logout extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		HttpSession session = request.getSession(false);
-		session.invalidate();
 		
-		request.setAttribute("logoutmessage",("ログアウトしました。")); 
+		session.setAttribute("logoutmessage",("ログアウトしました。")); 
 		
-		RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/lib/view/login/login.jsp");
-		rd.forward(request, response);
+		response.sendRedirect("/20220915kaihatsu/Login");
 			
 		}
 	}

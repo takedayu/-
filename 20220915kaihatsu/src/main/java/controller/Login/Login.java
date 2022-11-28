@@ -19,8 +19,11 @@ public class Login extends HttpServlet {
 		private static final long serialVersionUID = 1L;
 
 		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 			RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/lib/view/login/login.jsp");
-			rd.forward(request, response);			
+			rd.forward(request, response);
+			HttpSession session = request.getSession(false);
+			session.invalidate();
 
 		}
 		
