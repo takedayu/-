@@ -15,9 +15,23 @@ String userid=(String)session.getAttribute("userid");
 <!DOCTYPE html>
 
 <html>
-<head>
+<head >
+
+
+
+
+
+
+
 
 <style>
+
+
+}
+
+
+
+
 body {
 	width:90%;
     margin: 0 auto;
@@ -109,7 +123,7 @@ $(function(){
 </head>
 <body>
 
-<header>
+<header class="headercss">
 
 <button class="buttoncss" onclick="location.href='/20220915kaihatsu/ReadTURIAGE'">売上表</button>
 <button class="buttoncss" onclick="location.href='/20220915kaihatsu/ReadTZAIKO'">在庫表</button>
@@ -117,7 +131,7 @@ $(function(){
 <button class="buttoncss" onclick="location.href='/20220915kaihatsu/ReadMSTKOKYAKU'">顧客マスタ</button>
 
 <span class="headerright">
-<span style="padding:20px"><%=userid %></span>
+<span class="shironukicss" style="padding:20px"><%=userid %></span>
 <button class="buttoncss" onclick="location.href='/20220915kaihatsu/Logout'">ログアウト</button>
 </span>
 
