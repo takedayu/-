@@ -112,7 +112,7 @@ $(function(){
 <body>
 
 
-<header>
+<header class="headercss">
 
 <button class="buttoncss1" onclick="location.href='/20220915kaihatsu/ReadTURIAGE'">売上表</button>
 <button class="buttoncss1" onclick="location.href='/20220915kaihatsu/ReadTZAIKO'">在庫表</button>
