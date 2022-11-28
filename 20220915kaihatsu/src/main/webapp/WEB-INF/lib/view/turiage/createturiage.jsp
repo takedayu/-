@@ -87,6 +87,8 @@ function closeWin2() {
 window.onbeforeunload = function(e) {
 	  return "ブラウザを閉じても良いでしょうか？"; // 文字列はメッセージに反映されません。必ずreturnすればブランクでもOKです。
 }
+
+
 </script>
 </form>
 </body>

@@ -27,10 +27,11 @@ String logoutmessage = (String)session.getAttribute("logoutmessage");
 .label {
   display:block;
   text-align: left;
+  margin-top: 1em;
 }
 
 .message{
-	padding: 1em 0;
+	margin-top: 1em;
 	text-align: center;
 }
 
@@ -47,7 +48,7 @@ String logoutmessage = (String)session.getAttribute("logoutmessage");
 <form action="/20220915kaihatsu/Login" method="post">
 <label class="label" for="userid">ユーザID</label>
 <input class="inputbox" type="search" id="userid" name="USER_ID" <%if(userid != null){ %>value="<%=userid %>"<%} %> required>
-<br><br>
+<br>
 <label class="label" for="userpassword">パスワード</label>
 <input class="inputbox" type="password" id="userpassword" name="USER_PASSWORD" <%if(userpassword != null){ %>value="<%=userpassword %>"<%} %> required>
 <br>
