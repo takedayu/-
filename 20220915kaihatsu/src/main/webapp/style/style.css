@@ -24,7 +24,10 @@
 
 
 
+.headercss {
+    background: #007749; /* ヘッダーバーの色 */}
 
+.shironukicss{ color         : #ffffff;     /* 文字色     */}
 
 .listcss{
     overflow: auto;
@@ -260,36 +263,3 @@ form input:focus:valid + .error .invalid {
 }
 
 
-.headercss {
-    background: #007749; /* ヘッダーバーの色 */
-   
-    
-    }/*  */
-
-.shironukicss{ color         : #ffffff;     /* 文字色     */}
-
-.buttoncss1 {
-  display       : inline-block;
-  font-size     : 12pt;        /* 文字サイズ */
-  text-align    : center;      /* 文字位置   */
-  cursor        : pointer;     /* カーソル   */
-  padding       : 7px 8px;   /* 余白       */
-  background    : #007749;     /* 背景色     */
-  color         : #ffffff;     /* 文字色     */
-  line-height   : 1em;         /* 1行の高さ  */
-  opacity       : 1;         /* 透明度     */
-  transition    : .08s;         /* なめらか変化 */
-  border: none;/*線を消す*/
-  text-decoration: none; 
-  border-radius:0px;
-  
-}
-.buttoncss1:hover {
-  background    : #fcd404;     /* 背景色     */
-}
-
-.buttoncss1:active {
- /* border-bottom: solid 2px #fd9535;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);*/
-  background    : #007749;     /* 背景色     */  
-}
