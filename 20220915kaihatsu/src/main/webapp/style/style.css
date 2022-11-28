@@ -22,13 +22,6 @@
 }
 */
 
-
-
-.headercss {
-    background: #007749; /* ヘッダーバーの色 */}
-
-.shironukicss{ color         : #ffffff;     /* 文字色     */}
-
 .listcss{
     overflow: auto;
      /*width: 100%;*/
