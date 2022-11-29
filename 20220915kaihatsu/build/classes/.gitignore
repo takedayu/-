@@ -1,3 +1,6 @@
-/style.css
-/lib/
 /controller/
+/dao/
+/lib/
+/model/
+/style.css
+/web.xml
