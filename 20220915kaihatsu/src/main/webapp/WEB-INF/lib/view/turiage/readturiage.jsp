@@ -195,12 +195,12 @@ for(Turiage uriage:list){
 %>
 
 <tr>
-<td width="10%" id="0" data-sort=""><%=uriage.getUriageno() %></td>
-<td width="15%" id="1" data-sort=""><%=uriage.getUriagedate() %></td>
-<td width="12%" id="2" data-sort=""><%=uriage.getKokyakucode() %></td>
-<td width="12%" id="3" data-sort=""><%=uriage.getSeihincode() %></td>
-<td width="15%" id="4" data-sort=""><%=uriage.getUriagesuryo() %></td>
-<td width="31%" id="5" data-sort="" id="priceyen"><%=uriage.getUriage() %></td>
+<td width="10%"><%=uriage.getUriageno() %></td>
+<td width="15%"><%=uriage.getUriagedate() %></td>
+<td width="12%"><%=uriage.getKokyakucode() %></td>
+<td width="12%"><%=uriage.getSeihincode() %></td>
+<td width="15%"><%=uriage.getUriagesuryo() %></td>
+<td width="31%" id="priceyen"><%=uriage.getUriage() %></td>
 <td width="5%">
 <span class="func">
 <a class="cancelbuttoncss" href="/20220915kaihatsu/DeleteTURIAGE?URIAGE_NO=<%=uriage.getUriageno() %>" onclick="return confirm('製品コード<%=uriage.getUriageno()%>を削除してよろしいですか？');">削除</a>

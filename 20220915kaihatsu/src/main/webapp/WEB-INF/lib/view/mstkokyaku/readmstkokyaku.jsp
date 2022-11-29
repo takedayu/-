@@ -172,10 +172,10 @@ for(Mstkokyaku kokyaku:list){
 %>
 
 <tr>
-<td width="12%" ><%=kokyaku.getKokyaku_code() %></td>
-<td width="28%" ><%=kokyaku.getKokyaku_name() %></td>
-<td width="35%" ><%=kokyaku.getKokyaku_address() %></td>
-<td width="15%" ><%=kokyaku.getKokyaku_tel() %></td>
+<td width="12%"><%=kokyaku.getKokyaku_code() %></td>
+<td width="28%"><%=kokyaku.getKokyaku_name() %></td>
+<td width="35%"><%=kokyaku.getKokyaku_address() %></td>
+<td width="15%"><%=kokyaku.getKokyaku_tel() %></td>
 <td width="10%">
 <span class="func">
 <button class="funcbuttoncss" onClick="window.open('/20220915kaihatsu/UpdateMSTKOKYAKU?KOKYAKU_CODE=<%=kokyaku.getKokyaku_code() %>','null','menubar=0');" >更新</button>

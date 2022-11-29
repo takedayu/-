@@ -171,9 +171,9 @@ for(Tzaiko zaiko:list){
 
 <tr>
 <!-- <td><!%=zaiko.getZaikono() %></td> -->
-<td width="30%" id="0" data-sort=""><%=zaiko.getSeihincode() %></td>
-<td width="50%" id="1" data-sort=""><%=zaiko.getSeihinname() %></td>
-<td width="20%" id="2" data-sort=""><%=zaiko.getZaikosuryo() %></td>
+<td width="30%"><%=zaiko.getSeihincode() %></td>
+<td width="50%"><%=zaiko.getSeihinname() %></td>
+<td width="20%"><%=zaiko.getZaikosuryo() %></td>
 <td>
 <!-- 
 <button class="buttoncss" onClick="window.open('/20220915kaihatsu/UpdateMSTSEIHIN?SEIHIN_CODE=<!%=zaiko.getSeihincode() %>','null','menubar=0');" >更新</button>

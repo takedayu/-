@@ -165,10 +165,10 @@ $(function(){
 for(Mstseihin seihin:list){
 %>
 <tr>
-<td width="20%" id="0" data-sort=""><%=seihin.getSeihincode() %></td>
-<td width="40%" id="1" data-sort=""><%=seihin.getSeihinname() %></td>
-<td width="15%" id="2" data-sort=""><%=seihin.getSeihingenka() %></td>
-<td width="15%" id="3" data-sort=""><%=seihin.getSeihinteika() %></td>
+<td width="20%"><%=seihin.getSeihincode() %></td>
+<td width="40%"><%=seihin.getSeihinname() %></td>
+<td width="15%"><%=seihin.getSeihingenka() %></td>
+<td width="15%"><%=seihin.getSeihinteika() %></td>
 <td width="10%">
 <span class="func">
 <button class="funcbuttoncss" onClick="window.open('/20220915kaihatsu/UpdateMSTSEIHIN?SEIHIN_CODE=<%=seihin.getSeihincode() %>','null','menubar=0');" >更新</button>
