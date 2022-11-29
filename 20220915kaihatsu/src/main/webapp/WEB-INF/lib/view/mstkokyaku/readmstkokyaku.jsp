@@ -152,7 +152,7 @@ $(function(){
 
 </form>
 
-<div class="listhcss lisrhcss2">
+<div class="listhcss">
 <table border="1" id="table" >
 <thead>
 <tr>
