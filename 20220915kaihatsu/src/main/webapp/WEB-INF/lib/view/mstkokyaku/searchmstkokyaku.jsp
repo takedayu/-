@@ -111,7 +111,7 @@ $(function(){
 </head>
 <body>
 
-<div class="Header">
+
 <header class="headercss">
 
 <button class="buttoncss1" onclick="location.href='/20220915kaihatsu/ReadTURIAGE'">売上表</button>
@@ -151,30 +151,24 @@ $(function(){
 <!-- button type="button" onclick=history.back()>戻る</button> -->
 </form>
 
-<div class="listhcss">
+<div class="listcss">
 <table border="1" id="table">
 <thead>
 <tr>
 <th width="12%" id="0" data-sort="">顧客コード</th><th width="28%" id="1" data-sort="">顧客名</th><th width="35%" id="2" data-sort="">住所</th><th width="15%" id="3" data-sort="">電話番号</th><th width="10%"></th>
 </tr>
 </thead>
-</table>
-</div>
-</div>
-
-<div class="listcss">
-<table border="1" id="table">
 <tbody>
 <%
 for(Mstkokyaku kokyaku:list){
 %>
 
 <tr>
-<td width="12%" id="0" data-sort=""><%=kokyaku.getKokyaku_code() %></td>
-<td width="28%" id="1" data-sort=""><%=kokyaku.getKokyaku_name() %></td>
-<td width="35%" id="2" data-sort=""><%=kokyaku.getKokyaku_address() %></td>
-<td width="15%" id="3" data-sort=""><%=kokyaku.getKokyaku_tel() %></td>
-<td width="10%">
+<td><%=kokyaku.getKokyaku_code() %></td>
+<td><%=kokyaku.getKokyaku_name() %></td>
+<td><%=kokyaku.getKokyaku_address() %></td>
+<td><%=kokyaku.getKokyaku_tel() %></td>
+<td>
 <span class="func">
 <button class="funcbuttoncss" onClick="window.open('/20220915kaihatsu/UpdateMSTKOKYAKU?KOKYAKU_CODE=<%=kokyaku.getKokyaku_code() %>','null','menubar=0');" >更新</button>
 <a class="cancelbuttoncss" href="/20220915kaihatsu/DeleteMSTKOKYAKU?KOKYAKU_CODE=<%=kokyaku.getKokyaku_code() %>" onclick="return confirm('顧客コード<%=kokyaku.getKokyaku_code()%>を削除してよろしいですか？');">削除</a>

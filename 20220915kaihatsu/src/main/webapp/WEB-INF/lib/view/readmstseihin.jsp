@@ -125,10 +125,10 @@ $(function(){
 <div class="messageANDbutton">
 <button class="buttoncss" type="button" onclick="window.open('/20220915kaihatsu/CreateMSTSEIHIN','null','menubar=0');">新規登録</button>
 <%if(kanryomessage != null){ %>
-<p class="message"><%=kanryomessage %></p>
+<p><%=kanryomessage %></p>
 <%} %>
 <%if(errormessage != null){ %>
-<p class="errormessage message"><%=errormessage %></p>
+<p class="errormessage"><%=errormessage %></p>
 <%} %></div>
 
 <form action="/20220915kaihatsu/SearchMSTSEIHIN" method="post">

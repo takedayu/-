@@ -110,7 +110,7 @@ $(function(){
 </head>
 <body>
 
-<div class="Headerzaiko">
+
 <header class="headercss">
 
 <button class="buttoncss1" onclick="location.href='/20220915kaihatsu/ReadTURIAGE'">売上表</button>
@@ -151,29 +151,22 @@ $(function(){
 </form>
 
 
-<div class="listhcss">
-<table border="1" id="table" >
+<div class="listcss">
+<table border="1" id="table">
 <thead>
 <tr>
 <th width="30%" id="0" data-sort="">製品コード</th><th width="50%" id="1" data-sort="">製品名</th><th width="20%" id="2" data-sort="">数量</th>
 </tr>
 </thead>
-</table>
-</div>
-</div>
-
-<div class="listcss">
-<table border="1" id="table" >
 <tbody>
 <%
 for(Tzaiko zaiko:list){
 %>
-
 <tr>
 <!-- <td><!%=zaiko.getZaikono() %></td> -->
-<td width="30%" id="0" data-sort=""><%=zaiko.getSeihincode() %></td>
-<td width="50%" id="1" data-sort=""><%=zaiko.getSeihinname() %></td>
-<td width="20%" id="2" data-sort=""><%=zaiko.getZaikosuryo() %></td>
+<td><%=zaiko.getSeihincode() %></td>
+<td><%=zaiko.getSeihinname() %></td>
+<td><%=zaiko.getZaikosuryo() %></td>
 <td>
 <!-- 
 <button class="buttoncss" onClick="window.open('/20220915kaihatsu/UpdateMSTSEIHIN?SEIHIN_CODE=<!%=zaiko.getSeihincode() %>','null','menubar=0');" >更新</button>

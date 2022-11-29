@@ -110,7 +110,6 @@ $(function(){
 </head>
 <body>
 
-<div class="Header">
 <header class="headercss">
 
 <button class="buttoncss1" onclick="location.href='/20220915kaihatsu/ReadTURIAGE'">売上表</button>
@@ -149,31 +148,23 @@ $(function(){
 </form>
 
 
-<div class="listhcss">
+<div class="listcss">
 <table border="1" id="table">
 <thead>
 <tr>
 <th width="20%" id="0" data-sort="">製品コード</th><th width="40%" id="1" data-sort="">製品名</th><th width="15%" id="2" data-sort="">原価</th><th width="15%" id="3" data-sort="">定価</th><th width="10%"></th>
 </tr>
 </thead>
-</table>
-</div>
-</div>
-
-
-<div class="listcss">
-
-<table border="1" id="table" >
 <tbody>
 <%
 for(Mstseihin seihin:list){
 %>
 <tr>
-<td width="20%" id="0" data-sort=""><%=seihin.getSeihincode() %></td>
-<td width="40%" id="1" data-sort=""><%=seihin.getSeihinname() %></td>
-<td width="15%" id="2" data-sort=""><%=seihin.getSeihingenka() %></td>
-<td width="15%" id="3" data-sort=""><%=seihin.getSeihinteika() %></td>
-<td width="10%">
+<td><%=seihin.getSeihincode() %></td>
+<td><%=seihin.getSeihinname() %></td>
+<td><%=seihin.getSeihingenka() %></td>
+<td><%=seihin.getSeihinteika() %></td>
+<td>
 <span class="func">
 <button class="funcbuttoncss" onClick="window.open('/20220915kaihatsu/UpdateMSTSEIHIN?SEIHIN_CODE=<%=seihin.getSeihincode() %>','null','menubar=0');" >更新</button>
 <a class="cancelbuttoncss" href="/20220915kaihatsu/DeleteMSTSEIHIN?SEIHIN_CODE=<%=seihin.getSeihincode() %>" onclick="return confirm('製品コード<%=seihin.getSeihincode()%>を削除してよろしいですか？');">削除</a>
