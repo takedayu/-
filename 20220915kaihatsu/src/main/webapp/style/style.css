@@ -46,10 +46,9 @@
     top: 0;
     left: 0;
 	height: 100%;
-	
 }
 
-.listhcss th::before, .listcss th::after {
+.listhcss th::before, .listhcss th::after {
   content: "";
   height: 0;
   width: 0;
@@ -64,6 +63,7 @@
     border-bottom-color: #aaa;
     margin-top: -10px;
 }
+
 .listhcss th::after {
     border-top-color: #aaa;
     margin-top: 2px;
