@@ -59,6 +59,7 @@
   top: 50%;
 }
 
+
 .listhcss th::before {
     border-bottom-color: #aaa;
     margin-top: -10px;
@@ -112,7 +113,7 @@
 }
 
 
-
+/*
 .listcss th::before, .listcss th::after {
   content: "";
   height: 0;
@@ -131,7 +132,7 @@
     border-top-color: #aaa;
     margin-top: 2px;
 }
-
+*/
 
 
 
@@ -264,7 +265,7 @@
 
 .headerright {
   position: absolute;
- right: 7%;
+ right: 0%;
 }
 
 
@@ -350,7 +351,21 @@ form input:focus:valid + .error .invalid {
 	z-index:1;
 }
 
+.Headerzaiko{
+	background    : #ffffff;     /* 背景色     */ 
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	height:112px;
+	z-index:1;
+}
+
 
 .messageANDbutton{
-	margin:auto;
+	display: flex;
 }
+
+.message{
+	padding-left:1em;
+}
+

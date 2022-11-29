@@ -115,7 +115,7 @@ $(function(){
 </head>
 <body>
 
-
+<div class="Header">
 <header class="headercss">
 
 <button class="buttoncss1" onclick="location.href='/20220915kaihatsu/ReadTURIAGE'">売上表</button>
@@ -127,9 +127,7 @@ $(function(){
 <span class="shironukicss" style="padding:20px"><%=userid %></span>
 <button class="buttoncss1" onclick="location.href='/20220915kaihatsu/Logout'">ログアウト</button>
 </span>
-
 </header>
-
 
 <br>
 <button class="buttoncss" type="button" onclick="window.open('/20220915kaihatsu/CreateTURIAGE','null','menubar=0');">新規登録</button><br>
@@ -194,26 +192,32 @@ $(function(){
 </form>
 
 
-<div class="listcss">
+<div class="listhcss">
 <table border="1" id="table">
 <thead>
 <tr>
 <th width="10%" id="0" data-sort="">売上No.</th><th width="15%" id="1" data-sort="">取引日</th><th width="12%" id="2" data-sort="">顧客コード</th><th width="12%" id="3" data-sort="">製品コード</th><th width="15%" id="4" data-sort="">数量</th><th width="31%" id="5" data-sort="">売上高</th><th width="5%"></th>
 </tr>
 </thead>
+</table>
+</div>
+</div>
+
+<div class="listcss">
+<table border="1" id="table" >
 <tbody>
 <%
 for(Turiage uriage:list){
 %>
 
 <tr>
-<td><%=uriage.getUriageno() %></td>
-<td><%=uriage.getUriagedate() %></td>
-<td><%=uriage.getKokyakucode() %></td>
-<td><%=uriage.getSeihincode() %></td>
-<td><%=uriage.getUriagesuryo() %></td>
-<td><%=uriage.getUriage() %></td>
-<td>
+<td width="10%" id="0" data-sort=""><%=uriage.getUriageno() %></td>
+<td width="15%" id="1" data-sort=""><%=uriage.getUriagedate() %></td>
+<td width="12%" id="2" data-sort=""><%=uriage.getKokyakucode() %></td>
+<td width="12%" id="3" data-sort=""><%=uriage.getSeihincode() %></td>
+<td width="15%" id="4" data-sort=""><%=uriage.getUriagesuryo() %></td>
+<td width="31%" id="5" data-sort="" id="priceyen"><%=uriage.getUriage() %></td>
+<td width="5%">
 <span class="func">
 <a class="cancelbuttoncss" href="/20220915kaihatsu/DeleteTURIAGE?URIAGE_NO=<%=uriage.getUriageno() %>" onclick="return confirm('売上No.<%=uriage.getUriageno()%>を削除してよろしいですか？');">削除</a>
 </span>
