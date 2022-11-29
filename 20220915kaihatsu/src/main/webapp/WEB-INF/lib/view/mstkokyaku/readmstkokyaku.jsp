@@ -120,7 +120,7 @@ $(function(){
 
 <span class="headerright">
 <span class="shironukicss" style="padding:20px"><%=userid %></span>
-<button class="buttoncss" onclick="location.href='/20220915kaihatsu/Logout'">ログアウト</button>
+<button class="buttoncss1" onclick="location.href='/20220915kaihatsu/Logout'">ログアウト</button>
 </span>
 
 </header>
