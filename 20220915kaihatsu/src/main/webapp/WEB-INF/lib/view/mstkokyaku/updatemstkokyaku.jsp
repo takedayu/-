@@ -34,14 +34,32 @@ Mstkokyaku koushin=(Mstkokyaku)request.getAttribute("koushin");
 <label class="label" for="kokyakuaddress1">　　　住所&nbsp;&nbsp;</label>
 	<input id="kokyakuaddress1" type="text" name="KOKYAKU_ADDRESS" value="<%=koushin.getKokyaku_address()%>"><br>
 <label class="label" for="kokyakutel1">　電話番号&nbsp;&nbsp;</label>
-	<input id="kokyakutel1" type="text" name="KOKYAKU_TEL" value="<%=koushin.getKokyaku_tel() %>" 
-	pattern="[0-9]{10,11}" title="10～11桁の半角数字（ハイフンなし）"><br>
+	<input class="no-hyphen" id="kokyakutel1" type="tel" name="KOKYAKU_TEL" value="<%=koushin.getKokyaku_tel() %>" 
+	pattern="[0-9]{10,11}" title="10～11桁の半角数字を入力してください。" placeholder="例）00011112222"><br>
 <br>
-<button class="buttoncss" type="submit">更新</button>
+<button id="submitbtn" class="buttoncss" type="submit">更新</button>
 <!-- <button class="buttoncss" type="submit" onclick="confirm('更新してよろしいですか？')">更新</button> -->
 <button class="closebuttoncss" type="button" onclick="closeWin2()">閉じる</button>
 
 <script>
+$(function(){
+	  $('.no-hyphen').keypress(function(e){
+	    if((e.which < "0".charCodeAt(0) || "9".charCodeAt(0) < e.which) && e.which != 8 && e.which != 0) {
+	      return false;
+	    }
+	  });
+	})
+	
+		$(function(){
+	  $('.no-hyphen').keydown(function(e){
+		  if (event.keyCode === 13) {
+			  	submitbtn.click();
+			    // エンターキーが押されたときの動作
+			  }
+	  });
+	})
+
+
 function kakunin() {
 	if(confirm('更新してよろしいですか？') == true){
 		window.onbeforeunload=null;

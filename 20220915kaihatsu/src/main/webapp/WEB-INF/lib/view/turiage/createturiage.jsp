@@ -59,17 +59,33 @@ List<Mstkokyaku> kokyakulist=(List<Mstkokyaku>)request.getAttribute("kokyakulist
 		<option value=<%=box.getSeihincode()%>><%=box.getSeihincode()%></option>
 	<%}%>
 	</select>
-	<!-- <p class="fukidashi">項目が見当たらない場合は、<br>
-							製品コードを在庫表に登録してください。</p> -->
 	<br>
 	
 <label class="label" for="uriagesuryo1">　　　　数量&nbsp;&nbsp;</label>
-	<input id="uriagesuryo1" type="text" name="URIAGE_SURYO" pattern="[0-9]{0,10}" title="10桁以下の半角数字のみ入力可能です。"><br>
+	<input class="no-comma" id="uriagesuryo1" type="number" min="0" max="99999" name="URIAGE_SURYO"><br>
 <label class="label" for="uriage1">　　　売上高&nbsp;&nbsp;</label>
-	<input id="uriage1" type="text" name="URIAGE" pattern="[0-9]{0,10}" title="10桁以下の半角数字のみ入力可能です。"><br><br>
-<button class="buttoncss" type="submit">追加</button>
+	<input class="no-comma" id="uriage1" type="text" name="URIAGE" pattern="[0-9]{0,10}" title="10桁以下の半角数字を入力してください。"><br><br>
+<button id="submitbtn" class="buttoncss" type="submit">追加</button>
 <button class="closebuttoncss" type="button" onclick="closeWin2()">閉じる</button>
 <script>
+$(function(){
+	  $('.no-comma').keypress(function(e){
+	    if((e.which < "0".charCodeAt(0) || "9".charCodeAt(0) < e.which) && e.which != 8 && e.which != 0) {
+	      return false;
+	    }
+	  });
+	})
+	
+	$(function(){
+	  $('.no-comma').keydown(function(e){
+		  if (event.keyCode === 13) {
+			  	submitbtn.click();
+			    // エンターキーが押されたときの動作
+			  }
+	  });
+	})
+
+
 function kakunin() {
 	if(confirm('登録してよろしいですか？') == true){
 		window.onbeforeunload=null;

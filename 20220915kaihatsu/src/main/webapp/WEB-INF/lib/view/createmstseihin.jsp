@@ -20,17 +20,38 @@
 
 <form action="/20220915kaihatsu/CreateMSTSEIHIN" method="post" onsubmit="return kakunin();">
 <label class="label required" for="seihincode1">製品コード</label>
-	<input id="seihincode1" type="text" name="SEIHIN_CODE" maxlength="5" required><br>
+	<input id="seihincode1" type="text" name="SEIHIN_CODE" maxlength="5" 
+	pattern="^[a-zA-Z0-9]+$" title="記号や特殊文字、全角英数字は入力できません。" required><br>
 <label class="label required" for="seihinname1">　　製品名</label>
 	<input id="seihinname1" type="text" name="SEIHIN_NAME" maxlength="20" required><br>
 <label class="label" for="seihingenka1">　　　原価&nbsp;&nbsp;</label>
-	<input id="seihingenka1" type="text" name="SEIHIN_GENKA" pattern="[0-9]{0,10}" title="10桁以下の半角数字のみ入力可能です。"><br>
+	<input class="no-comma" id="seihingenka1" type="text" name="SEIHIN_GENKA" 
+	pattern="[0-9]{0,10}" title="10桁以下の半角数字を入力してください。"><br>
 <label class="label" for="seihinteika1">　　　定価&nbsp;&nbsp;</label>
-	<input id="seihinteika1" type="text" name="SEIHIN_TEIKA" pattern="[0-9]{0,10}" title="10桁以下の半角数字のみ入力可能です。"><br><br>
-<button class="buttoncss" type="submit">追加</button>
+	<input class="no-comma" id="seihinteika1" type="text" name="SEIHIN_TEIKA" 
+	pattern="[0-9]{0,10}" title="10桁以下の半角数字を入力してください。"><br><br>
+<button id="submitbtn" class="buttoncss" type="submit">追加</button>
 <button class="closebuttoncss" type="button" onclick="closeWin2()">閉じる</button>
 
 <script>
+$(function(){
+	  $('.no-comma').keypress(function(e){
+	    if((e.which < "0".charCodeAt(0) || "9".charCodeAt(0) < e.which) && e.which != 8 && e.which != 0) {
+	      return false;
+	    }
+	  });
+	})
+	
+	$(function(){
+	  $('.no-comma').keydown(function(e){
+		  if (event.keyCode === 13) {
+			  	submitbtn.click();
+			    // エンターキーが押されたときの動作
+			  }
+	  });
+	})
+
+
 function kakunin() {
 	if(confirm('登録してよろしいですか？') == true){
 		window.onbeforeunload=null;

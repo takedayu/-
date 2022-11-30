@@ -51,7 +51,7 @@ public class Login extends HttpServlet {
 				session.setAttribute("userpassword", userpassword);
 //				rd=request.getRequestDispatcher("/WEB-INF/lib/view/readmstseihin.jsp");
 //				rd.forward(request, response);	
-				response.sendRedirect("/20220915kaihatsu/Main");
+				response.sendRedirect("/20220915kaihatsu/ReadTURIAGE");
 				
 			}
 		}

@@ -22,22 +22,38 @@
 
 <p class="valimessage">*の項目は入力必須です。</p><br>
 
-<form action="/20220915kaihatsu/CreateMSTKOKYAKU" method="post">
+<form action="/20220915kaihatsu/CreateMSTKOKYAKU" method="post" onsubmit="return kakunin();">
 <label class="label required" for="kokyakucode1">顧客コード</label>
-	<input id="kokyakucode1" type="text" name="KOKYAKU_CODE" value="<%=mstkokyaku.getKokyaku_code() %>" maxlength="5" required><br>
-
-
-
+	<input id="kokyakucode1" type="text" name="KOKYAKU_CODE" value="<%=mstkokyaku.getKokyaku_code() %>" maxlength="5"
+	pattern="^[a-zA-Z0-9]+$" title="記号や特殊文字、全角英数字は入力できません。" required><br>
 <label class="label required" for="kokyakuname1">　　顧客名</label>
 	<input id="kokyakuname1" type="text" name="KOKYAKU_NAME" value="<%=mstkokyaku.getKokyaku_name() %>" maxlength="20" required><br>
 <label class="label" for="kokyakuaddress1">　　　住所&nbsp;&nbsp;</label>
 	<input id="kokyakuaddress1" type="text" name="KOKYAKU_ADDRESS" value="<%=mstkokyaku.getKokyaku_address() %>"><br>
 <label class="label" for="kokyakutel1">　電話番号&nbsp;&nbsp;</label>
-	<input id="kokyakutel1" type="text" name="KOKYAKU_TEL" value="<%=mstkokyaku.getKokyaku_tel() %>"
-	pattern="[0-9]{10,11}" title="10～11桁の半角数字（ハイフンなし）"><br><br>
-<button class="buttoncss" type="submit">追加</button>
+	<input class="no-hyphen" id="kokyakutel1" type="tel" name="KOKYAKU_TEL" value="<%=mstkokyaku.getKokyaku_tel() %>"
+	pattern="[0-9]{10,11}" title="10～11桁の半角数字を入力してください。" placeholder="例）00011112222"><br><br>
+<button id="submitbtn" class="buttoncss" type="submit">追加</button>
 <button class="closebuttoncss" type="button" onclick="closeWin2()">閉じる</button>
 <script>
+$(function(){
+	  $('.no-hyphen').keypress(function(e){
+	    if((e.which < "0".charCodeAt(0) || "9".charCodeAt(0) < e.which) && e.which != 8 && e.which != 0) {
+	      return false;
+	    }
+	  });
+	})
+	
+		$(function(){
+	  $('.no-hyphen').keydown(function(e){
+		  if (event.keyCode === 13) {
+			  	submitbtn.click();
+			    // エンターキーが押されたときの動作
+			  }
+	  });
+	})
+	
+
 function kakunin() {
 	if(confirm('登録してよろしいですか？') == true){
 		window.onbeforeunload=null;

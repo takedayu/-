@@ -29,19 +29,37 @@ Mstseihin koushin=(Mstseihin)request.getAttribute("koushin");
 	<input id="seihinname1" type="text" name="SEIHIN_NAME" maxlength="20" required value="<%=koushin.getSeihinname() %>"><br>
 	
 <label class="label" for="seihingenka1">　　　原価&nbsp;&nbsp;</label>
-	<input id="seihingenka1" type="text" name="SEIHIN_GENKA" value="<%=koushin.getSeihingenka()%>"
-	pattern="[0-9]{0,10}" title="10桁以下の半角数字のみ入力可能です。"><br>
+	<input class="no-comma" id="seihingenka1" type="text" name="SEIHIN_GENKA" value="<%=koushin.getSeihingenka()%>"
+	pattern="[0-9]{0,10}" title="10桁以下の半角数字を入力してください。"><br>
 	
 <label class="label" for="seihinteika1">　　　定価&nbsp;&nbsp;</label>
-	<input id="seihinteika1" type="text" name="SEIHIN_TEIKA" value="<%=koushin.getSeihinteika() %>"
-	pattern="[0-9]{0,10}" title="10桁以下の半角数字のみ入力可能です。"><br>
+	<input class="no-comma" id="seihinteika1" type="text" name="SEIHIN_TEIKA" value="<%=koushin.getSeihinteika() %>"
+	pattern="[0-9]{0,10}" title="10桁以下の半角数字を入力してください。"><br>
 <br>
-<button class="buttoncss" type="submit">更新</button>
+<button id="submitbtn" class="buttoncss" type="submit">更新</button>
 <!-- <button name="btn" onclick="confirmsubmit()">更新</button> -->
 
 <button class="closebuttoncss" type="button" onclick="closeWin2();">閉じる</button>
 
 <script>
+$(function(){
+	  $('.no-comma').keypress(function(e){
+	    if((e.which < "0".charCodeAt(0) || "9".charCodeAt(0) < e.which) && e.which != 8 && e.which != 0) {
+	      return false;
+	    }
+	  });
+	})
+	
+	$(function(){
+	  $('.no-comma').keydown(function(e){
+		  if (event.keyCode === 13) {
+			  	submitbtn.click();
+			    // エンターキーが押されたときの動作
+			  }
+	  });
+	})
+
+
 function kakunin() {
 	if(confirm('更新してよろしいですか？') == true){
 		window.onbeforeunload=null;
