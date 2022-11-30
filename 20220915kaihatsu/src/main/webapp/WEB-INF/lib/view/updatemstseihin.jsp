@@ -30,11 +30,11 @@ Mstseihin koushin=(Mstseihin)request.getAttribute("koushin");
 	
 <label class="label" for="seihingenka1">　　　原価&nbsp;&nbsp;</label>
 	<input class="no-comma" id="seihingenka1" type="text" name="SEIHIN_GENKA" value="<%=koushin.getSeihingenka()%>"
-	pattern="[0-9]{0,10}" title="10桁以下の半角数字を入力してください。"><br>
+	pattern="[0-9]{0,10}" title="10桁以下の半角数字を入力してください。（記号不可）"><br>
 	
 <label class="label" for="seihinteika1">　　　定価&nbsp;&nbsp;</label>
 	<input class="no-comma" id="seihinteika1" type="text" name="SEIHIN_TEIKA" value="<%=koushin.getSeihinteika() %>"
-	pattern="[0-9]{0,10}" title="10桁以下の半角数字を入力してください。"><br>
+	pattern="[0-9]{0,10}" title="10桁以下の半角数字を入力してください。（記号不可）"><br>
 <br>
 <button id="submitbtn" class="buttoncss" type="submit">更新</button>
 <!-- <button name="btn" onclick="confirmsubmit()">更新</button> -->
@@ -42,6 +42,7 @@ Mstseihin koushin=(Mstseihin)request.getAttribute("koushin");
 <button class="closebuttoncss" type="button" onclick="closeWin2();">閉じる</button>
 
 <script>
+/*
 $(function(){
 	  $('.no-comma').keypress(function(e){
 	    if((e.which < "0".charCodeAt(0) || "9".charCodeAt(0) < e.which) && e.which != 8 && e.which != 0) {
@@ -58,6 +59,7 @@ $(function(){
 			  }
 	  });
 	})
+*/
 
 
 function kakunin() {

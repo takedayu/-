@@ -32,10 +32,11 @@
 	<input id="kokyakuaddress1" type="text" name="KOKYAKU_ADDRESS" value="<%=mstkokyaku.getKokyaku_address() %>"><br>
 <label class="label" for="kokyakutel1">　電話番号&nbsp;&nbsp;</label>
 	<input class="no-hyphen" id="kokyakutel1" type="tel" name="KOKYAKU_TEL" value="<%=mstkokyaku.getKokyaku_tel() %>"
-	pattern="[0-9]{10,11}" title="10～11桁の半角数字を入力してください。" placeholder="例）00011112222"><br><br>
+	pattern="[0-9]{10,11}" title="10～11桁の半角数字を入力してください。（ハイフン不可）"><br><br>
 <button id="submitbtn" class="buttoncss" type="submit">追加</button>
 <button class="closebuttoncss" type="button" onclick="closeWin2()">閉じる</button>
 <script>
+/*
 $(function(){
 	  $('.no-hyphen').keypress(function(e){
 	    if((e.which < "0".charCodeAt(0) || "9".charCodeAt(0) < e.which) && e.which != 8 && e.which != 0) {
@@ -52,6 +53,7 @@ $(function(){
 			  }
 	  });
 	})
+*/
 	
 
 function kakunin() {

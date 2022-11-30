@@ -27,17 +27,18 @@ Mstseihin tsuika=(Mstseihin)request.getAttribute("tsuika");
 	<input id="seihincode1" type="text" name="SEIHIN_CODE" maxlength="5"
 	pattern="^[a-zA-Z0-9]+$" title="記号や特殊文字、全角英数字は入力できません。" value="<%=tsuika.getSeihincode() %>" required><br>
 <label class="label required" for="seihinname1">　　製品名</label>
-	<input id="seihinname1" type="text" name="SEIHIN_NAME" maxlength="20"value="<%=tsuika.getSeihinname() %>" required><br>
+	<input id="seihinname1" type="text" name="SEIHIN_NAME" maxlength="20" value="<%=tsuika.getSeihinname() %>" required><br>
 <label class="label" for="seihingenka1">　　　原価&nbsp;&nbsp;</label>
 	<input class="no-comma" id="seihingenka1" type="text" name="SEIHIN_GENKA" value="<%=tsuika.getSeihingenka() %>" 
-	pattern="[0-9]{0,10}" title="10桁以下の半角数字を入力してください。"><br>
+	pattern="[0-9]{0,10}" title="10桁以下の半角数字を入力してください。（記号不可）"><br>
 <label class="label" for="seihinteika1">　　　定価&nbsp;&nbsp;</label>
 	<input class="no-comma" id="seihinteika1" type="text" name="SEIHIN_TEIKA" value="<%=tsuika.getSeihinteika() %>" 
-	pattern="[0-9]{0,10}" title="10桁以下の半角数字を入力してください。"><br><br>
+	pattern="[0-9]{0,10}" title="10桁以下の半角数字を入力してください。（記号不可）"><br><br>
 <button id="submitbtn" class="buttoncss" type="submit">追加</button>
 <button class="closebuttoncss" type="button" onclick="closeWin2()">閉じる</button>
 
 <script>
+/*
 $(function(){
 	  $('.no-comma').keypress(function(e){
 	    if((e.which < "0".charCodeAt(0) || "9".charCodeAt(0) < e.which) && e.which != 8 && e.which != 0) {
@@ -54,6 +55,7 @@ $(function(){
 			  }
 	  });
 	})
+*/
 
 
 function kakunin() {
