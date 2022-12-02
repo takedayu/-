@@ -35,6 +35,7 @@ String logoutmessage = (String)session.getAttribute("logoutmessage");
 	text-align: center;
 }
 
+
 </style>
 
 </head>
@@ -53,9 +54,11 @@ String logoutmessage = (String)session.getAttribute("logoutmessage");
 <input class="inputbox" type="password" id="userpassword" name="USER_PASSWORD" <%if(userpassword != null){ %>value="<%=userpassword %>"<%} %> required>
 <br>
 <div class="loginbutton">
-<button class="buttoncss" style="margin: 1em 0;" type="submit">ログイン</button>
+<button class="buttoncss" style="margin-top:1em; margin-bottom:2em;" type="submit">ログイン</button>
+<br>
 </div>
 </form>
+	<a class="toiawaseurl" href="/20220915kaihatsu/Toiawase">お問い合わせ</a>
 </div>
 </body>
 </html>

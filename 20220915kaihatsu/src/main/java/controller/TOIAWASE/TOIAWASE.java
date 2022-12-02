@@ -1,4 +1,4 @@
-package controller.TOIAWASE1;
+package controller.TOIAWASE;
 
 import java.io.IOException;
 
@@ -8,7 +8,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import dao.ToiawaseDAO;
 import model.Toiawase;
@@ -16,20 +15,20 @@ import model.Toiawase;
 /**
  * Servlet implementation class Create
  */
-@WebServlet("/Toiawaseform")
-public class Toiawase2 extends HttpServlet {
+@WebServlet("/Toiawase")
+public class TOIAWASE extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession(false);
-		if(session == null || session.getAttribute("userid") == null) {
-			response.sendRedirect("/20220915kaihatsu/Login");
-		}else {
+//		HttpSession session = request.getSession(false);
+//		if(session == null || session.getAttribute("userid") == null) {
+//			response.sendRedirect("/20220915kaihatsu/Login");
+//		}else {
 			RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/lib/view/toiawase/toiawaseform.jsp");
 		rd.forward(request, response);
 		}
-	}
+//	}
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -52,12 +51,10 @@ public class Toiawase2 extends HttpServlet {
 		ToiawaseDAO ld=new ToiawaseDAO();
 		
 		
-			ld.insertOne(toiawase);
+		ld.insertOne(toiawase);
 			
-			
-			
-			
-			response.sendRedirect("/20220915kaihatsu/Toiawaseform");
+		RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/lib/view/toiawase/toiawasekanryo.jsp");
+		rd.forward(request, response);
 		}
 	}
 

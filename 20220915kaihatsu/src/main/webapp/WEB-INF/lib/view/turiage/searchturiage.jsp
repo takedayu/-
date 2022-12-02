@@ -230,6 +230,14 @@ for(Turiage uriage:list){
 <p class="errormessage">検索条件に一致するデータが存在しません！</p>
 <%} %>
 </div>
+
+<div class="Footer">
+    <footer>
+   <span class="footerright">
+	<a class="toiawaseurl" href="/20220915kaihatsu/Toiawase">お問い合わせ</a>
+	</span>
+    </footer>
+</div>
 <!-- <p>(sessionID=<!%= session.getId() %>)</p> -->
 </body>
 </html>

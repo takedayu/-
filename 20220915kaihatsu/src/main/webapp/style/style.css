@@ -76,7 +76,7 @@
     overflow: auto;
      /*width: 100%;
     height: 450px;*/
-    margin-bottom:250px;
+    margin-bottom:3em;
 }
 .listcss table{
     margin: 0;
@@ -369,4 +369,29 @@ form input:focus:valid + .error .invalid {
 .message{
 	padding-left:1em;
 }
+
+.toiawaseurl{
+  text-decoration: none;
+  color: #007749;
+	padding : 7px 8px ;
+}
+
+.toiawaseurl:hover{
+  text-decoration: underline;
+}
+
+
+.Footer{
+		position: -webkit-sticky;
+	position: sticky;
+	background:#f2f2f2 ;
+		height:2em;
+		 line-height: 2em;
+}
+
+.footerright {
+  position: absolute;
+ right: 0%;
+}
+
 

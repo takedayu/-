@@ -192,5 +192,13 @@ function deleteshori() {
 
 </div>
 
+<div class="Footer">
+    <footer>
+   <span class="footerright">
+	<a class="toiawaseurl" href="/20220915kaihatsu/Toiawase">お問い合わせ</a>
+	</span>
+    </footer>
+</div>
+
 </body>
 </html>
