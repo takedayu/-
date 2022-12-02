@@ -19,7 +19,7 @@
 <p class="valimessage">*の項目は入力必須です。</p><br>
 <form action="/20220915kaihatsu/CreateMSTKOKYAKU" method="post" onsubmit="return kakunin();">
 <label class="label required" for="kokyakucode1">顧客コード</label>
-	<input id="kokyakucode1" type="text" name="KOKYAKU_CODE" maxlength="5"
+	<input id="kokyakucode1" type="text" name="KOKYAKU_CODE" maxlength="10"
 	pattern="^[a-zA-Z0-9]+$" title="記号や特殊文字、全角英数字は入力できません。" required><br>
 <label class="label required" for="kokyakuname1">　　顧客名</label>
 	<input id="kokyakuname1" type="text" name="KOKYAKU_NAME" maxlength="20" required><br>
