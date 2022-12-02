@@ -19,7 +19,7 @@ public class KanryoTOIAWASE extends HttpServlet {
 		if(session == null || session.getAttribute("userid") == null) {
 			response.sendRedirect("/20220915kaihatsu/Login");
 		}else {
-			response.sendRedirect("/20220915kaihatsu/ReadMSTSEIHIN");
+			response.sendRedirect("/20220915kaihatsu/ReadTURIAGE");
 		}
 	}
 }
