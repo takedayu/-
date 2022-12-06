@@ -82,7 +82,7 @@ body {
         <input type="tel" id="Tel1" name="tel" pattern="[0-9]{10,11}" title="10～11桁の半角数字を入力してください。(ハイフン不可)" required>
 		<br>
 		<label class="label required" for="Inquiry_details">お問い合わせ内容</label>
-		<textarea id="inquiry_details1" name="inquiry_details"  rows="10" cols="50" required></textarea>
+		<textarea id="inquiry_details1" name="inquiry_details"  rows="10" cols="50" maxlength="250" required></textarea>
 		<br>
 
         <button id="submitbtn" class="buttoncss" type="submit" style="margin: 1em 0;">送信</button>

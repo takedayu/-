@@ -32,7 +32,7 @@ Mstkokyaku koushin=(Mstkokyaku)request.getAttribute("koushin");
 <label class="label required" for="kokyakuname1">　　顧客名</label>
 	<input id="kokyakuname1" type="text" name="KOKYAKU_NAME" maxlength="20" required value="<%=koushin.getKokyaku_name() %>"><br>
 <label class="label" for="kokyakuaddress1">　　　住所&nbsp;&nbsp;</label>
-	<input id="kokyakuaddress1" type="text" name="KOKYAKU_ADDRESS" value="<%=koushin.getKokyaku_address()%>"><br>
+	<input id="kokyakuaddress1" type="text" name="KOKYAKU_ADDRESS" maxlength="50" value="<%=koushin.getKokyaku_address()%>"><br>
 <label class="label" for="kokyakutel1">　電話番号&nbsp;&nbsp;</label>
 	<input class="no-hyphen" id="kokyakutel1" type="tel" name="KOKYAKU_TEL" value="<%=koushin.getKokyaku_tel() %>" 
 	pattern="[0-9]{10,11}" title="10～11桁の半角数字を入力してください。（ハイフン不可）"><br>
