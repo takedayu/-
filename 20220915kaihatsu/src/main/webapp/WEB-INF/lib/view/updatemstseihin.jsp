@@ -20,19 +20,19 @@ Mstseihin koushin=(Mstseihin)request.getAttribute("koushin");
 <body>
 <form name="updatem" action="/20220915kaihatsu/UpdateMSTSEIHIN" method="Post" onsubmit="return kakunin();">
 <p class="valimessage">*の項目は入力必須です。</p><br>
-<label class="label">製品コード&nbsp;&nbsp;</label>
+<label class="label">製品コード</label>
 <p style="display:inline"><%= koushin.getSeihincode() %></p><br>
 <!-- 製品コード：<input type="text" name="SEIHIN_CODE" value="<!%=koushin.getSeihincode() %>"><br> -->
 			<input type="hidden" name="SEIHIN_CODE" value="<%=koushin.getSeihincode() %>">
 			
-<label class="label required" for="seihinname1">　　製品名</label>
+<label class="label required" for="seihinname1">製品名</label>
 	<input id="seihinname1" type="text" name="SEIHIN_NAME" maxlength="20" required value="<%=koushin.getSeihinname() %>"><br>
 	
-<label class="label" for="seihingenka1">　　　原価&nbsp;&nbsp;</label>
+<label class="label" for="seihingenka1">原価</label>
 	<input class="no-comma" id="seihingenka1" type="text" name="SEIHIN_GENKA" value="<%=koushin.getSeihingenka()%>"
 	pattern="[0-9]{0,10}" title="10桁以下の半角数字を入力してください。（記号不可）"><br>
 	
-<label class="label" for="seihinteika1">　　　定価&nbsp;&nbsp;</label>
+<label class="label" for="seihinteika1">定価</label>
 	<input class="no-comma" id="seihinteika1" type="text" name="SEIHIN_TEIKA" value="<%=koushin.getSeihinteika() %>"
 	pattern="[0-9]{0,10}" title="10桁以下の半角数字を入力してください。（記号不可）"><br>
 <br>

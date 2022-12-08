@@ -4,9 +4,9 @@
 @SuppressWarnings("unchecked")
 List<Turiage> list=(List<Turiage>)request.getAttribute("list");
 @SuppressWarnings("unchecked")
-List<Turiage> list2=(List<Turiage>)request.getAttribute("list2");
+List<Mstkokyaku> list2=(List<Mstkokyaku>)request.getAttribute("list2");
 @SuppressWarnings("unchecked")
-List<Turiage> list3=(List<Turiage>)session.getAttribute("list3");
+List<Mstseihin> list3=(List<Mstseihin>)request.getAttribute("list3");
 String kanryomessage=(String)session.getAttribute("kanryomessage");
 String userid=(String)session.getAttribute("userid");
 %>
@@ -135,31 +135,31 @@ $(function(){
 
 <form action="/20220915kaihatsu/SearchTURIAGE" method="post">
 
-<label class="label" for="searchno1">　　売上No&nbsp;</label>
+<label class="label" for="searchno1">売上No</label>
 	<select name="searchno" id="searchno1">
-	<option value="">売上No.を選択　 </option>
-	<%for(Turiage box:list2){%>
+	<option value="">売上No.を選択 </option>
+	<%for(Turiage box:list){%>
 		<option value=<%=box.getUriageno()%>><%=box.getUriageno()%></option>
 	<%}%>
 	</select>
 	
-	<label class="label" for="searchdate2">　　取引日&nbsp;</label>
+	<label class="label" for="searchdate2">取引日</label>
 	<input type="date" id="searchdate2" name="searchdateST">
 	<p style="display:inline">～</p>
 	<input type="date" id="searchdate2" name="searchdateEN">
 	
-<label class="label" for="searchkokyaku1">　　顧客コード&nbsp;</label>
+<label class="label" for="searchkokyaku1">顧客コード</label>
 	<select name="searchkokyaku" id="searchkokyaku1">
 	<option value="">顧客コードを選択</option>
-	<%for(Turiage box:list2){%>
-		<option value=<%=box.getKokyakucode()%>><%=box.getKokyakucode()%></option>
+	<%for(Mstkokyaku box:list2){%>
+		<option value=<%=box.getKokyaku_code()%>><%=box.getKokyaku_code()%></option>
 	<%}%>
 	</select>
 	
-<label class="label" for="searchseihin1">　　製品コード&nbsp;</label>
+<label class="label" for="searchseihin1">製品コード</label>
 	<select name="searchseihin" id="searchseihin1">
 	<option value="">製品コードを選択</option>
-	<%for(Turiage box:list2){%>
+	<%for(Mstseihin box:list3){%>
 		<option value=<%=box.getSeihincode()%>><%=box.getSeihincode()%></option>
 	<%}%>
 	</select>

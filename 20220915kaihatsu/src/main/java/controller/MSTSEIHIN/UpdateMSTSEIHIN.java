@@ -24,7 +24,11 @@ public class UpdateMSTSEIHIN extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
 		if(session == null || session.getAttribute("userid") == null) {
-			response.sendRedirect("/20220915kaihatsu/Login");
+//			response.sendRedirect("/20220915kaihatsu/Login");
+			session = request.getSession(true);
+			session.setAttribute("loginfailedmessage",("認証できませんでした。ログインしてください。")); 
+			RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/lib/view/kanryomstseihin.jsp");
+			rd.forward(request, response);
 		}else {
 		String s_id=request.getParameter("SEIHIN_CODE");
 		if(s_id==null) {
@@ -42,6 +46,14 @@ public class UpdateMSTSEIHIN extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		request.setCharacterEncoding("UTF-8");
 
+		if(session == null || session.getAttribute("userid") == null) {
+//			response.sendRedirect("/20220915kaihatsu/Login");
+			session = request.getSession(true);
+			session.setAttribute("loginfailedmessage",("認証できませんでした。ログインしてください。")); 
+			RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/lib/view/kanryomstseihin.jsp");
+			rd.forward(request, response);
+		}else {
+		
 		String seihincode=request.getParameter("SEIHIN_CODE");
 		String seihinname=request.getParameter("SEIHIN_NAME");
 		String seihingenka=request.getParameter("SEIHIN_GENKA");
@@ -76,7 +88,7 @@ public class UpdateMSTSEIHIN extends HttpServlet {
 //		response.sendRedirect("/20220915kaihatsu/ReadMSTSEIHIN");
 		RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/lib/view/kanryomstseihin.jsp");
 		rd.forward(request, response);
-
+		}
 	}
 
 }

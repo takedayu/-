@@ -15,10 +15,14 @@ public class Logout extends HttpServlet {
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		
 		HttpSession session = request.getSession(false);
 		
-		session.setAttribute("logoutmessage",("ログアウトしました。")); 
+		if(session == null || session.getAttribute("userid") == null) {
+			session = request.getSession(true);
+			session.setAttribute("loginfailedmessage",("認証できませんでした。ログインしてください。")); 
+		}else {	
+			session.setAttribute("logoutmessage",("ログアウトしました。")); 
+		}
 		
 		response.sendRedirect("/20220915kaihatsu/Login");
 			

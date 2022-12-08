@@ -5,6 +5,7 @@ String userid = (String)request.getAttribute("userid");
 String userpassword = (String)request.getAttribute("userpassword");
 String errormessage = (String)request.getAttribute("errormessage");
 String logoutmessage = (String)session.getAttribute("logoutmessage");
+String loginfailedmessage = (String)session.getAttribute("loginfailedmessage");
 %>
 <!DOCTYPE html>
 <html>
@@ -17,14 +18,15 @@ String logoutmessage = (String)session.getAttribute("logoutmessage");
 .box {
 
 /*  border: solid 3px #000000;    */
-    width: 170px;
-      margin-right: auto;
+  width: 15%;
+  margin-right: auto;
   margin-left: auto;
   text-align: center;
 
 }
 
 .label {
+  width: 100%;
   display:block;
   text-align: left;
   margin-top: 1em;
@@ -35,6 +37,10 @@ String logoutmessage = (String)session.getAttribute("logoutmessage");
 	text-align: center;
 }
 
+.textbox {
+width:100%;
+}
+
 
 </style>
 
@@ -43,15 +49,16 @@ String logoutmessage = (String)session.getAttribute("logoutmessage");
 <div class="message">
 <%if(errormessage != null){ %><p class="errormessage"><%=errormessage %></p><%} %>
 <%if(logoutmessage != null){ %><p><%=logoutmessage %></p><%} %>
+<%if(loginfailedmessage != null){ %><p class="errormessage"><%=loginfailedmessage %></p><%} %>
 </div>
 
 <div class="box">
 <form action="/20220915kaihatsu/Login" method="post">
 <label class="label" for="userid">ユーザID</label>
-<input class="inputbox" type="search" id="userid" name="USER_ID" <%if(userid != null){ %>value="<%=userid %>"<%} %> required>
+<input class="textbox" type="search" id="userid" name="USER_ID" <%if(userid != null){ %>value="<%=userid%>"<%} %> required>
 <br>
 <label class="label" for="userpassword">パスワード</label>
-<input class="inputbox" type="password" id="userpassword" name="USER_PASSWORD" <%if(userpassword != null){ %>value="<%=userpassword %>"<%} %> required>
+<input class="textbox" type="password" id="userpassword" name="USER_PASSWORD" <%if(userpassword != null){ %>value="<%=userpassword %>"<%} %> required>
 <br>
 <div class="loginbutton">
 <button class="buttoncss" style="margin-top:1em; margin-bottom:2em;" type="submit">ログイン</button>

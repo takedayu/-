@@ -25,7 +25,11 @@ public class CreateMSTKOKYAKU extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
 		if(session == null || session.getAttribute("userid") == null) {
-			response.sendRedirect("/20220915kaihatsu/Login");
+//			response.sendRedirect("/20220915kaihatsu/Login");
+			session = request.getSession(true);
+			session.setAttribute("loginfailedmessage",("認証できませんでした。ログインしてください。")); 
+			RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/lib/view/mstkokyaku/kanryomstkokyaku.jsp");
+			rd.forward(request, response);
 		}else {
 			RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/lib/view/mstkokyaku/createmstkokyaku.jsp");
 		rd.forward(request, response);
@@ -35,7 +39,15 @@ public class CreateMSTKOKYAKU extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
-		request.setCharacterEncoding("UTF-8");			
+		request.setCharacterEncoding("UTF-8");		
+		if(session == null || session.getAttribute("userid") == null) {
+//			response.sendRedirect("/20220915kaihatsu/Login");
+			session = request.getSession(true);
+			session.setAttribute("loginfailedmessage",("認証できませんでした。ログインしてください。")); 
+			RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/lib/view/mstkokyaku/kanryomstkokyaku.jsp");
+			rd.forward(request, response);
+		}else {
+		
 		String kokyaku_code=request.getParameter("KOKYAKU_CODE");
 		String kokyaku_name=request.getParameter("KOKYAKU_NAME");
 		String kokyaku_address=request.getParameter("KOKYAKU_ADDRESS");
@@ -65,5 +77,5 @@ public class CreateMSTKOKYAKU extends HttpServlet {
 			rd.forward(request, response);	
 		}
 	}
-
+}
 }

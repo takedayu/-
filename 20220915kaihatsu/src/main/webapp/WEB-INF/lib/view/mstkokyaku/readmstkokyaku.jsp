@@ -138,7 +138,7 @@ $(function(){
 
 <form action="/20220915kaihatsu/SearchMSTKOKYAKU" method="post">
 
-<label class="label" for="searchcode1">　　顧客コード&nbsp;</label>
+<label class="label" for="searchcode1">顧客コード</label>
 	<select name="searchcode" id="searchcode1">
 	<option value="">顧客コードを選択</option>
 	<%for(Mstkokyaku box:list2){%>
@@ -146,7 +146,7 @@ $(function(){
 	<%}%>
 	</select>
 
-<label class="label" for="searchname2">　　顧客名&nbsp;</label>
+<label class="label" for="searchname2">顧客名</label>
 <input type="search" id="searchname2" name="searchname">
 <button class="buttoncss" type="submit">検索</button>
 

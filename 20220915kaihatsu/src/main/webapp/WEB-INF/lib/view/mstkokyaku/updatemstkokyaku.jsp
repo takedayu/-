@@ -24,16 +24,16 @@ Mstkokyaku koushin=(Mstkokyaku)request.getAttribute("koushin");
 <body>
 <form name="updatem" action="/20220915kaihatsu/UpdateMSTKOKYAKU" method="Post" onsubmit="return kakunin();">
 <p class="valimessage">*の項目は入力必須です。</p><br>
-<label class="label">顧客コード&nbsp;&nbsp;</label>
+<label class="label">顧客コード</label>
 <p style="display:inline"><%= koushin.getKokyaku_code() %></p><br>
 
 <!-- 製品コード：<input type="text" name="SEIHIN_CODE" value="<!%=koushin.getSeihincode() %>"><br> -->
 			<input type="hidden" name="KOKYAKU_CODE" value="<%=koushin.getKokyaku_code() %>">
-<label class="label required" for="kokyakuname1">　　顧客名</label>
+<label class="label required" for="kokyakuname1">顧客名</label>
 	<input id="kokyakuname1" type="text" name="KOKYAKU_NAME" maxlength="20" required value="<%=koushin.getKokyaku_name() %>"><br>
-<label class="label" for="kokyakuaddress1">　　　住所&nbsp;&nbsp;</label>
+<label class="label" for="kokyakuaddress1">住所</label>
 	<input id="kokyakuaddress1" type="text" name="KOKYAKU_ADDRESS" maxlength="50" value="<%=koushin.getKokyaku_address()%>"><br>
-<label class="label" for="kokyakutel1">　電話番号&nbsp;&nbsp;</label>
+<label class="label" for="kokyakutel1">電話番号</label>
 	<input class="no-hyphen" id="kokyakutel1" type="tel" name="KOKYAKU_TEL" value="<%=koushin.getKokyaku_tel() %>" 
 	pattern="[0-9]{10,11}" title="10～11桁の半角数字を入力してください。（ハイフン不可）"><br>
 <br>

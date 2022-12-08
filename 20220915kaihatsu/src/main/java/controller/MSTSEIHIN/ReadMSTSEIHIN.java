@@ -21,6 +21,8 @@ import model.Mstseihin;
 		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			HttpSession session = request.getSession(false);
 			if(session == null || session.getAttribute("userid") == null) {
+				session = request.getSession(true);
+				session.setAttribute("loginfailedmessage",("認証できませんでした。ログインしてください。")); 
 				response.sendRedirect("/20220915kaihatsu/Login");
 			}else {
 				SeihinDAO dao=new SeihinDAO();

@@ -6,9 +6,11 @@
 @SuppressWarnings("unchecked")
 List<Turiage> list=(List<Turiage>)session.getAttribute("list");
 @SuppressWarnings("unchecked")
-List<Turiage> list2=(List<Turiage>)session.getAttribute("list2");
+List<Turiage> listno=(List<Turiage>)session.getAttribute("listno");
 @SuppressWarnings("unchecked")
-List<Turiage> list3=(List<Turiage>)session.getAttribute("list3");
+List<Mstkokyaku> list2=(List<Mstkokyaku>)session.getAttribute("list2");
+@SuppressWarnings("unchecked")
+List<Mstseihin> list3=(List<Mstseihin>)session.getAttribute("list3");
 
 
 //Integer searchno2 = (Integer)session.getAttribute("searchno");
@@ -134,13 +136,13 @@ $(function(){
 
 <form action="/20220915kaihatsu/SearchTURIAGE" method="post">
 
-<label class="label" for="searchno1">　　売上No&nbsp;</label>
+<label class="label" for="searchno1">売上No</label>
 	<select name="searchno" id="searchno1">
-	<option value="">売上No.を選択　 </option>
+	<option value="">売上No.を選択</option>
 
 	<%if (searchno2 != ""){
 		int searchno=Integer.parseInt(searchno2);
-		for(Turiage box:list2){	
+		for(Turiage box:listno){	
 			if(box.getUriageno() == searchno){%>
 			<option value=<%=box.getUriageno()%> selected><%=box.getUriageno()%></option>
 			<%}else{%>
@@ -148,7 +150,7 @@ $(function(){
 			<%}%>
 		<%}%>
 	<%}else{%>
-			<%for(Turiage box:list2){%>
+			<%for(Turiage box:listno){%>
 			<option value=<%=box.getUriageno()%>><%=box.getUriageno()%></option>
 			<%}%>
 	<%}%>
@@ -156,28 +158,28 @@ $(function(){
 	</select>
 
 
-	<label class="label" for="searchdate2">　　取引日&nbsp;</label>
+	<label class="label" for="searchdate2">取引日</label>
 	<input type="date" id="searchdate2" name="searchdateST" value="<%= searchdateST %>">
 	<p style="display:inline">～</p>
 	<input type="date" id="searchdate2" name="searchdateEN" value="<%= searchdateEN %>">
 
-<label class="label" for="searchkokyaku1">　　顧客コード&nbsp;</label>
+<label class="label" for="searchkokyaku1">顧客コード</label>
 	<select name="searchkokyaku" id="searchkokyaku1">
 	<option value="">顧客コードを選択</option>
-	<%for(Turiage box:list2){%>
-		<% if(box.getKokyakucode().equals(searchkokyaku)){	%>
-		<option value=<%=box.getKokyakucode()%> selected><%=box.getKokyakucode()%></option>
+	<%for(Mstkokyaku box:list2){%>
+		<% if(box.getKokyaku_code().equals(searchkokyaku)){	%>
+		<option value=<%=box.getKokyaku_code()%> selected><%=box.getKokyaku_code()%></option>
 	<%}else{%>
-		<option value=<%=box.getKokyakucode()%>><%=box.getKokyakucode()%></option>
+		<option value=<%=box.getKokyaku_code()%>><%=box.getKokyaku_code()%></option>
 	<%}%>
 	<%}%>
 
 	</select>
 	
-<label class="label" for="searchseihin1">　　製品コード&nbsp;</label>
+<label class="label" for="searchseihin1">製品コード</label>
 	<select name="searchseihin" id="searchseihin1">
 	<option value="">製品コードを選択</option>
-	<%for(Turiage box:list2){%>
+	<%for(Mstseihin box:list3){%>
 		<% if(box.getSeihincode().equals(searchseihin)){	%>
 		<option value=<%=box.getSeihincode()%> selected><%=box.getSeihincode()%></option>
 	<%}else{%>

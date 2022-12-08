@@ -22,15 +22,16 @@ body {
 
 .box {
 
-/*  border: solid 3px #000000;    */
-    width: 170px;
-      margin-right: auto;
+  /*border: solid 1px #000000;*/
+  width: 32%;
+  margin-right: auto;
   margin-left: auto;
   text-align: center;
 
 }
 
 .label {
+width: 40%;
   display:block;
   text-align: left;
   margin-top: 1em;
@@ -41,7 +42,9 @@ body {
 	text-align: center;
 }
 
-
+.textbox {
+width:100%;
+}
 
 
 </style>
@@ -73,17 +76,16 @@ body {
 <form action="/20220915kaihatsu/Toiawase" method="post" onsubmit="return kakunin();">
 
         <label class="label required" for="Name">氏名</label>
-        <input type="text" id="name1" name="name" maxlength="20" required>
-        <br>
+        <input type="text" id="name1" class="textbox" name="name" maxlength="20" required>
+
         <label class="label required" for="Mail_address">メールアドレス </label>
-        <input type="email" id="mail_address1" name="mail_address" maxlength="80" required>
-        <br>
+        <input type="email" id="mail_address1" class="textbox" name="mail_address" maxlength="80" required>
+
         <label class="label required" for="Tel">電話番号</label>
-        <input type="tel" id="Tel1" name="tel" pattern="[0-9]{10,11}" title="10～11桁の半角数字を入力してください。(ハイフン不可)" required>
-		<br>
+        <input type="tel" id="Tel1" class="textbox" name="tel" pattern="[0-9]{10,11}" title="10～11桁の半角数字を入力してください。(ハイフン不可)" required>
+
 		<label class="label required" for="Inquiry_details">お問い合わせ内容</label>
-		<textarea id="inquiry_details1" name="inquiry_details"  rows="10" cols="50" maxlength="250" required></textarea>
-		<br>
+		<textarea id="inquiry_details1" class="textbox" name="inquiry_details"  rows="10"  maxlength="250" required></textarea>
 
         <button id="submitbtn" class="buttoncss" type="submit" style="margin: 1em 0;">送信</button>
 		<button class="closebuttoncss" type="button" onclick="history.back ()">戻る</button>

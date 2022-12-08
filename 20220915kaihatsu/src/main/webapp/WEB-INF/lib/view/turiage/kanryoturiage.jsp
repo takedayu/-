@@ -3,8 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>完了</title>
+<meta charset="UTF-8" http-equiv="Refresh" content="0;URL=/20220915kaihatsu/ReadTURIAGE">
+<title></title>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script>
