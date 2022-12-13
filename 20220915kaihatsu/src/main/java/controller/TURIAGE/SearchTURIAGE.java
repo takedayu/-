@@ -23,6 +23,17 @@ import model.Turiage;
 	@WebServlet("/SearchTURIAGE")
 	public class SearchTURIAGE extends HttpServlet {
 		private static final long serialVersionUID = 1L;
+		
+		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			HttpSession session = request.getSession(false);
+			if(session == null || session.getAttribute("userid") == null) {
+				session = request.getSession(true);
+				session.setAttribute("loginfailedmessage",("認証できませんでした。ログインしてください。")); 
+				response.sendRedirect("/20220915kaihatsu/Login");
+			}else {
+				response.sendRedirect("/20220915kaihatsu/ReadTURIAGE");
+			}
+		}
 
 
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
