@@ -128,7 +128,7 @@ $(function(){
 <p class="message"><%=kanryomessage %></p>
 <%} %>
 <%if(errormessage != null){ %>
-<p class="errormessage message"><%=errormessage %></p>
+<p class="errormessage message"><b><%=errormessage %></b></p>
 <%} %></div>
 
 <form action="/20220915kaihatsu/SearchMSTSEIHIN" method="post">
