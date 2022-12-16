@@ -353,7 +353,7 @@ form input:focus:valid + .error .invalid {
 .buttonselectedcss1 {
   display       : inline-block;
   font-size     : 12pt;        /* 文字サイズ */
-  font-weight:bold;
+  font-weight	: bold;
   text-align    : center;      /* 文字位置   */
   cursor        : pointer;     /* カーソル   */
   padding       : 7px 8px;   /* 余白       */

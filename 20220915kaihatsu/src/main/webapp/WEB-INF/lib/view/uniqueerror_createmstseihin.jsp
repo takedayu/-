@@ -25,7 +25,7 @@ Mstseihin tsuika=(Mstseihin)request.getAttribute("tsuika");
 <form action="/20220915kaihatsu/CreateMSTSEIHIN" method="post" onsubmit="return kakunin();">
 <label class="label required" for="seihincode1">製品コード</label>
 	<input id="seihincode1" type="text" name="SEIHIN_CODE" maxlength="20"
-	pattern="^[a-zA-Z0-9]+$" title="記号や特殊文字、全角英数字は入力できません。" value="<%=tsuika.getSeihincode() %>" required><br>
+	pattern="^[a-zA-Z0-9 -~]+$" title="特殊文字、全角英数字は入力できません。" value="<%=tsuika.getSeihincode() %>" required><br>
 <label class="label required" for="seihinname1">製品名</label>
 	<input id="seihinname1" type="text" name="SEIHIN_NAME" maxlength="20" value="<%=tsuika.getSeihinname() %>" required><br>
 <label class="label" for="seihingenka1">原価</label>
