@@ -171,51 +171,103 @@ public class UriageDAO {
 		try {
 			this.connect();
 			int searchno2 = 0;
-				if (searchno != "") {
-					searchno2=Integer.parseInt(searchno);
-					sql = ("SELECT * FROM T_URIAGE WHERE URIAGE_NO = ? AND KOKYAKU_CODE LIKE ? AND SEIHIN_CODE LIKE ? ");
-						if(searchdateST2 != null && searchdateEN2 != null) {
-							afterconcatSQL = sql.concat("AND URIAGE_DATE BETWEEN ? AND ?");
-							ps = db.prepareStatement(afterconcatSQL);	
-							ps.setDate(4,searchdateST2);
-							ps.setDate(5,searchdateEN2);
-						}else if (searchdateST2 != null){
-							afterconcatSQL = sql.concat("AND URIAGE_DATE >= ?");
-							ps = db.prepareStatement(afterconcatSQL);	
-							ps.setDate(4,searchdateST2);
-						}else if (searchdateEN2 != null){
-							afterconcatSQL = sql.concat("AND URIAGE_DATE <= ?");
-							ps = db.prepareStatement(afterconcatSQL);
-							ps.setDate(4,searchdateEN2);
-						}else {
-							ps = db.prepareStatement(sql);	
-						}
-					ps.setInt(1,searchno2);
-					ps.setString(2,"%"+searchkokyaku+"%");
-					ps.setString(3,"%"+searchseihin+"%");	
-					rs = ps.executeQuery();
-				}else {
-					sql = ("SELECT * FROM T_URIAGE WHERE KOKYAKU_CODE LIKE ? AND SEIHIN_CODE LIKE ? ");
-						if(searchdateST2 != null && searchdateEN2 != null) {
-							afterconcatSQL = sql.concat("AND URIAGE_DATE BETWEEN ? AND ?");
-							ps = db.prepareStatement(afterconcatSQL);	
-							ps.setDate(3,searchdateST2);
-							ps.setDate(4,searchdateEN2);
-						}else if (searchdateST2 != null){
-							afterconcatSQL = sql.concat("AND URIAGE_DATE >= ?");
-							ps = db.prepareStatement(afterconcatSQL);	
-							ps.setDate(3,searchdateST2);
-						}else if (searchdateEN2 != null){
-							afterconcatSQL = sql.concat("AND URIAGE_DATE <= ?");
-							ps = db.prepareStatement(afterconcatSQL);
-							ps.setDate(3,searchdateEN2);
-						}else {
-							ps = db.prepareStatement(sql);	
-						}
-					ps.setString(1,"%"+searchkokyaku+"%");
-					ps.setString(2,"%"+searchseihin+"%");	
-					rs = ps.executeQuery();
-				}
+//				if (searchno != "") {
+//					searchno2=Integer.parseInt(searchno);
+//					sql = ("SELECT * FROM T_URIAGE WHERE URIAGE_NO = ? AND KOKYAKU_CODE LIKE ? AND SEIHIN_CODE LIKE ? ");
+//						if(searchdateST2 != null && searchdateEN2 != null) {
+//							afterconcatSQL = sql.concat("AND URIAGE_DATE BETWEEN ? AND ?");
+//							ps = db.prepareStatement(afterconcatSQL);	
+//							ps.setDate(4,searchdateST2);
+//							ps.setDate(5,searchdateEN2);
+//						}else if (searchdateST2 != null){
+//							afterconcatSQL = sql.concat("AND URIAGE_DATE >= ?");
+//							ps = db.prepareStatement(afterconcatSQL);	
+//							ps.setDate(4,searchdateST2);
+//						}else if (searchdateEN2 != null){
+//							afterconcatSQL = sql.concat("AND URIAGE_DATE <= ?");
+//							ps = db.prepareStatement(afterconcatSQL);
+//							ps.setDate(4,searchdateEN2);
+//						}else {
+//							ps = db.prepareStatement(sql);	
+//						}
+//					ps.setInt(1,searchno2);
+//					ps.setString(2,"%"+searchkokyaku+"%");
+//					ps.setString(3,"%"+searchseihin+"%");	
+//					rs = ps.executeQuery();
+//				}else {
+//					sql = ("SELECT * FROM T_URIAGE WHERE KOKYAKU_CODE LIKE ? AND SEIHIN_CODE LIKE ? ");
+//						if(searchdateST2 != null && searchdateEN2 != null) {
+//							afterconcatSQL = sql.concat("AND URIAGE_DATE BETWEEN ? AND ?");
+//							ps = db.prepareStatement(afterconcatSQL);	
+//							ps.setDate(3,searchdateST2);
+//							ps.setDate(4,searchdateEN2);
+//						}else if (searchdateST2 != null){
+//							afterconcatSQL = sql.concat("AND URIAGE_DATE >= ?");
+//							ps = db.prepareStatement(afterconcatSQL);	
+//							ps.setDate(3,searchdateST2);
+//						}else if (searchdateEN2 != null){
+//							afterconcatSQL = sql.concat("AND URIAGE_DATE <= ?");
+//							ps = db.prepareStatement(afterconcatSQL);
+//							ps.setDate(3,searchdateEN2);
+//						}else {
+//							ps = db.prepareStatement(sql);	
+//						}
+//					ps.setString(1,"%"+searchkokyaku+"%");
+//					ps.setString(2,"%"+searchseihin+"%");	
+//					rs = ps.executeQuery();
+//				}
+			
+			
+			if (searchno.equals("")) {
+				
+				sql = ("SELECT * FROM T_URIAGE WHERE KOKYAKU_CODE LIKE ? AND SEIHIN_CODE LIKE ? ");
+					if(searchdateST2 != null && searchdateEN2 != null) {
+						afterconcatSQL = sql.concat("AND URIAGE_DATE BETWEEN ? AND ?");
+						ps = db.prepareStatement(afterconcatSQL);	
+						ps.setDate(3,searchdateST2);
+						ps.setDate(4,searchdateEN2);
+					}else if (searchdateST2 != null){
+						afterconcatSQL = sql.concat("AND URIAGE_DATE >= ?");
+						ps = db.prepareStatement(afterconcatSQL);	
+						ps.setDate(3,searchdateST2);
+					}else if (searchdateEN2 != null){
+						afterconcatSQL = sql.concat("AND URIAGE_DATE <= ?");
+						ps = db.prepareStatement(afterconcatSQL);
+						ps.setDate(3,searchdateEN2);
+					}else {
+						ps = db.prepareStatement(sql);	
+					}
+				ps.setString(1,"%"+searchkokyaku+"%");
+				ps.setString(2,"%"+searchseihin+"%");	
+				rs = ps.executeQuery();
+				
+			}else {
+				
+				searchno2=Integer.parseInt(searchno);
+				sql = ("SELECT * FROM T_URIAGE WHERE URIAGE_NO = ? AND KOKYAKU_CODE LIKE ? AND SEIHIN_CODE LIKE ? ");
+					if(searchdateST2 != null && searchdateEN2 != null) {
+						afterconcatSQL = sql.concat("AND URIAGE_DATE BETWEEN ? AND ?");
+						ps = db.prepareStatement(afterconcatSQL);	
+						ps.setDate(4,searchdateST2);
+						ps.setDate(5,searchdateEN2);
+					}else if (searchdateST2 != null){
+						afterconcatSQL = sql.concat("AND URIAGE_DATE >= ?");
+						ps = db.prepareStatement(afterconcatSQL);	
+						ps.setDate(4,searchdateST2);
+					}else if (searchdateEN2 != null){
+						afterconcatSQL = sql.concat("AND URIAGE_DATE <= ?");
+						ps = db.prepareStatement(afterconcatSQL);
+						ps.setDate(4,searchdateEN2);
+					}else {
+						ps = db.prepareStatement(sql);	
+					}
+				ps.setInt(1,searchno2);
+				ps.setString(2,"%"+searchkokyaku+"%");
+				ps.setString(3,"%"+searchseihin+"%");	
+				rs = ps.executeQuery();
+				
+			}
+
 
 			while (rs.next()) {
 				int uriageno = rs.getInt("URIAGE_NO");

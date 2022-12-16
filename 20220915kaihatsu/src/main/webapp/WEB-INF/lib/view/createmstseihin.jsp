@@ -30,7 +30,7 @@
 <label class="label" for="seihinteika1">定価</label>
 	<input class="no-comma" id="seihinteika1" type="text" name="SEIHIN_TEIKA" 
 	pattern="[0-9]{0,10}" title="10桁以下の半角数字を入力してください。（記号不可）"><br><br>
-<button id="submitbtn" class="buttoncss" type="submit">追加</button>
+<button id="submitbtn" class="buttoncss" type="submit">登録</button>
 <button class="closebuttoncss" type="button" onclick="closeWin2()">閉じる</button>
 
 <script>

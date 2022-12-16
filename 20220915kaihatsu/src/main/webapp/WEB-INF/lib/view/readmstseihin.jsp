@@ -167,8 +167,8 @@ for(Mstseihin seihin:list){
 <tr>
 <td width="20%"><%=seihin.getSeihincode() %></td>
 <td width="40%"><%=seihin.getSeihinname() %></td>
-<td width="15%"><%=String.format("%,d", seihin.getSeihingenka()) %></td>
-<td width="15%"><%=String.format("%,d", seihin.getSeihinteika()) %></td>
+<td width="15%" style="text-align: right"><%=String.format("%,d", seihin.getSeihingenka()) %></td>
+<td width="15%" style="text-align: right"><%=String.format("%,d", seihin.getSeihinteika()) %></td>
 <td width="10%">
 <span class="func">
 <button class="funcbuttoncss" onClick="window.open('/20220915kaihatsu/UpdateMSTSEIHIN?SEIHIN_CODE=<%=seihin.getSeihincode() %>','null','menubar=0');" >更新</button>

@@ -179,7 +179,7 @@ $(function(){
 <table border="1" id="table" >
 <thead>
 <tr>
-<th width="10%" id="0" data-sort="">売上No.</th><th width="15%" id="1" data-sort="">取引日</th><th width="12%" id="2" data-sort="">顧客コード</th><th width="12%" id="3" data-sort="">製品コード</th><th width="15%" id="4" data-sort="">数量</th><th width="31%" id="5" data-sort="">売上高</th><th width="5%"></th>
+<th width="10%" id="0" data-sort="">売上No.</th><th width="15%" id="1" data-sort="">取引日</th><th width="12%" id="2" data-sort="">顧客コード</th><th width="15%" id="3" data-sort="">製品コード</th><th width="15%" id="4" data-sort="">数量</th><th width="26%" id="5" data-sort="">売上高</th><th width="5%"></th>
 </tr>
 </thead>
 </table>
@@ -198,9 +198,9 @@ for(Turiage uriage:list){
 <td width="10%"><%=uriage.getUriageno() %></td>
 <td width="15%"><%=uriage.getUriagedate() %></td>
 <td width="12%"><%=uriage.getKokyakucode() %></td>
-<td width="12%"><%=uriage.getSeihincode() %></td>
-<td width="15%"><%=String.format("%,d",uriage.getUriagesuryo()) %></td>
-<td width="31%" id="priceyen"><%=String.format("%,d", uriage.getUriage()) %></td>
+<td width="15%"><%=uriage.getSeihincode() %></td>
+<td width="15%" style="text-align: right"><%=String.format("%,d",uriage.getUriagesuryo()) %></td>
+<td width="26%" id="priceyen" style="text-align: right"><%=String.format("%,d", uriage.getUriage()) %></td>
 <td width="5%">
 <span class="func">
 <a class="cancelbuttoncss" href="/20220915kaihatsu/DeleteTURIAGE?URIAGE_NO=<%=uriage.getUriageno() %>" onclick="return confirm('製品コード<%=uriage.getUriageno()%>を削除してよろしいですか？');">削除</a>

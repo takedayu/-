@@ -68,7 +68,7 @@ List<Mstkokyaku> kokyakulist=(List<Mstkokyaku>)request.getAttribute("kokyakulist
 <label class="label" for="uriage1">売上高</label>
 	<input class="no-comma" id="uriage1" type="text" name="URIAGE"
 	pattern="[0-9]{0,10}" title="10桁以下の半角数字を入力してください。（記号不可）"><br><br>
-<button id="submitbtn" class="buttoncss" type="submit">追加</button>
+<button id="submitbtn" class="buttoncss" type="submit">登録</button>
 <button class="closebuttoncss" type="button" onclick="closeWin2()">閉じる</button>
 <script>
 /*
