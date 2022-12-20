@@ -337,9 +337,18 @@ public class UriageDAO {
 				ps.setInt(5,seihinteika);
 				ps.setInt(6,tsuika.getUriagesuryo());
 				ps.executeUpdate();
-			}
+				
+			}else if(tsuika.getUriagesuryo() == 0 && tsuika.getUriage() != 0) {
 			
-		
+				ps=db.prepareStatement("INSERT INTO T_URIAGE(URIAGE_DATE,KOKYAKU_CODE,SEIHIN_CODE,URIAGE_SURYO,URIAGE)VALUES(?,?,?,?,?)");
+				ps.setDate(1,uriagedatetoSQL);
+				ps.setString(2,tsuika.getKokyakucode());
+				ps.setString(3,tsuika.getSeihincode());
+				ps.setInt(4,tsuika.getUriagesuryo());
+				ps.setInt(5,tsuika.getUriage());
+				ps.executeUpdate();
+			}
+				
 			
 			ps=db.prepareStatement("UPDATE T_ZAIKO SET ZAIKO_SURYO = ZAIKO_SURYO - ? WHERE SEIHIN_CODE = ?");
 			ps.setString(2,tsuika.getSeihincode());

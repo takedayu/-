@@ -62,9 +62,9 @@ List<Mstkokyaku> kokyakulist=(List<Mstkokyaku>)request.getAttribute("kokyakulist
 	</select>
 	<br>
 	
-<label class="label" for="uriagesuryo1">数量</label>
+<label class="label required" for="uriagesuryo1">数量</label>
 	<input class="no-comma" id="uriagesuryo1" type="text" name="URIAGE_SURYO"
-	pattern="[0-9]{0,5}" title="5桁以下の半角数字を入力してください。（記号不可）"><br>
+	pattern="[0-9]{0,5}" title="5桁以下の半角数字を入力してください。（記号不可）" required><br>
 <label class="label" for="uriage1">売上高</label>
 	<input class="no-comma" id="uriage1" type="text" name="URIAGE"
 	pattern="[0-9]{0,10}" title="10桁以下の半角数字を入力してください。（記号不可）"><br><br>
